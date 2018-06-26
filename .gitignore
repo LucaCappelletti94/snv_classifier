@@ -1,0 +1,71 @@
+
+\.DS_Store
+
+*.log
+
+# Latex files
+
+*.aux
+*.glo
+*.idx
+*.log
+*.toc
+*.ist
+*.acn
+*.acr
+*.alg
+*.bbl
+*.blg
+*.tui
+*.top
+*.tmp
+*.mp
+*.dvi
+*.glg
+*.gls
+*.ilg
+*.ind
+*.lof
+*.md5
+*.dpth
+*.bak
+*.fls
+*-blx.bib
+*.auxlock
+*.fdb_latexmk
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.out
+*.synctex.gz
+*.xml
+*.bcf
+*.xdy
+*.pdf
+!main.pdf
+
+# Mac IDE files
+*.swp
+*~
+*(Autosaved).rtfd/
+Backup[ ]of[ ]*.pages/
+Backup[ ]of[ ]*.key/
+Backup[ ]of[ ]*.numbers/
+
+# Mac finder files and hidden folders
+.DS_Store
+.DS_Store
+*.alg
+_minted-main
+.ipynb_checkpoints
+
+Unimi/Algoritmica per il web/_minted-main/
+
+*.synctex(busy)
+
+*.mf
+
+*.tfm
+
+*.600pk

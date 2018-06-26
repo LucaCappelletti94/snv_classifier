@@ -1,0 +1,339 @@
+\providecommand{\main}{.}
+\input{\main/../../general/packages.tex}
+
+\addbibresource{references.bib}
+
+\begin{document}
+
+\input{\main/../../general/title.tex}
+
+{\hypersetup{hidelinks}
+  \tableofcontents  % Generates the table of contents
+}
+\part{Dataset}
+\chapter{Data points}
+First we begin looking at the dataset, the distributions of the given metrics and the statistical analysis of these data points.
+
+\section{Retrieving the dataset}
+The dataset can be downloaded from \url{https://homes.di.unimi.it/valentini/ProgettoBioinformatica1718/data/}.
+
+\section{Data points}
+In the dataset there are 981389 data points, each one comprised of 26 metrics. The first 356 are pathogenic and all the others are negative.
+
+\chapter{Metrics}
+\section{CpGobsExp}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/CpGobsExp}
+  \caption{Sampling distribution of metric CpGobsExp}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/CpGobsExp}
+  \caption{Values of metric CpGobsExp}
+\end{figure}
+\section{CpGperCpG}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/CpGperCpG}
+  \caption{Sampling distribution of metric CpGperCpG}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/CpGperCpG}
+  \caption{Values of metric CpGperCpG}
+\end{figure}
+\section{CpGperGC}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/CpGperGC}
+  \caption{Sampling distribution of metric CpGperGC}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/CpGperGC}
+  \caption{Values of metric CpGperGC}
+\end{figure}
+\section{DGVCount}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/DGVCount}
+  \caption{Sampling distribution of metric DGVCount}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/DGVCount}
+  \caption{Values of metric DGVCount}
+\end{figure}
+\section{DnaseClusteredHyp}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/DnaseClusteredHyp}
+  \caption{Sampling distribution of metric DnaseClusteredHyp}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/DnaseClusteredHyp}
+  \caption{Values of metric DnaseClusteredHyp}
+\end{figure}
+\section{DnaseClusteredScore}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/DnaseClusteredScore}
+  \caption{Sampling distribution of metric DnaseClusteredScore}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/DnaseClusteredScore}
+  \caption{Values of metric DnaseClusteredScore}
+\end{figure}
+\section{EncH3K27Ac}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/EncH3K27Ac}
+  \caption{Sampling distribution of metric EncH3K27Ac}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/EncH3K27Ac}
+  \caption{Values of metric EncH3K27Ac}
+\end{figure}
+\section{EncH3K4Me1}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/EncH3K4Me1}
+  \caption{Sampling distribution of metric EncH3K4Me1}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/EncH3K4Me1}
+  \caption{Values of metric EncH3K4Me1}
+\end{figure}
+\section{EncH3K4Me3}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/EncH3K4Me3}
+  \caption{Sampling distribution of metric EncH3K4Me3}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/EncH3K4Me3}
+  \caption{Values of metric EncH3K4Me3}
+\end{figure}
+\section{GCContent}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/GCContent}
+  \caption{Sampling distribution of metric GCContent}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/GCContent}
+  \caption{Values of metric GCContent}
+\end{figure}
+\section{GerpRS}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/GerpRS}
+  \caption{Values of metric GerpRS}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/GerpRS}
+  \caption{Sampling distribution of metric GerpRS}
+\end{figure}
+\section{GerpRSpv}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/GerpRSpv}
+  \caption{Sampling distribution of metric GerpRSpv}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/GerpRSpv}
+  \caption{Values of metric GerpRSpv}
+\end{figure}
+\section{ISCApath}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/ISCApath}
+  \caption{Sampling distribution of metric ISCApath}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/ISCApath}
+  \caption{Values of metric ISCApath}
+\end{figure}
+\section{commonVar}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/commonVar}
+  \caption{Sampling distribution of metric commonVar}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/commonVar}
+  \caption{Values of metric commonVar}
+\end{figure}
+\section{dbVARCount}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/dbVARCount}
+  \caption{Sampling distribution of metric dbVARCount}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/dbVARCount}
+  \caption{Values of metric dbVARCount}
+\end{figure}
+\section{fantom5Perm}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/fantom5Perm}
+  \caption{Sampling distribution of metric fantom5Perm}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/fantom5Perm}
+  \caption{Values of metric fantom5Perm}
+\end{figure}
+\section{fantom5Robust}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/fantom5Robust}
+  \caption{Sampling distribution of metric fantom5Robust}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/fantom5Robust}
+  \caption{Values of metric fantom5Robust}
+\end{figure}
+\section{fracRareCommon}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/fracRareCommon}
+  \caption{Sampling distribution of metric fracRareCommon}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/fracRareCommon}
+  \caption{Values of metric fracRareCommon}
+\end{figure}
+\section{mamPhastCons46way}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/mamPhastCons46way}
+  \caption{Sampling distribution of metric mamPhastCons46way}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/mamPhastCons46way}
+  \caption{Values of metric mamPhastCons46way}
+\end{figure}
+\section{mamPhyloP46way}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/mamPhyloP46way}
+  \caption{Sampling distribution of metric mamPhyloP46way}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/mamPhyloP46way}
+  \caption{Values of metric mamPhyloP46way}
+\end{figure}
+\section{numTFBSConserved}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/numTFBSConserved}
+  \caption{Sampling distribution of metric numTFBSConserved}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/numTFBSConserved}
+  \caption{Values of metric numTFBSConserved}
+\end{figure}
+\section{priPhastCons46way}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/priPhastCons46way}
+  \caption{Sampling distribution of metric priPhastCons46way}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/priPhastCons46way}
+  \caption{Values of metric priPhastCons46way}
+\end{figure}
+\section{priPhyloP46way}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/priPhyloP46way}
+  \caption{Sampling distribution of metric priPhyloP46way}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/priPhyloP46way}
+  \caption{Values of metric priPhyloP46way}
+\end{figure}
+\section{rareVar}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/rareVar}
+  \caption{Sampling distribution of metric rareVar}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/rareVar}
+  \caption{Values of metric rareVar}
+\end{figure}
+\section{verPhastCons46way}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/verPhastCons46way}
+  \caption{Sampling distribution of metric verPhastCons46way}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/verPhastCons46way}
+  \caption{Values of metric verPhastCons46way}
+\end{figure}
+\section{verPhyloP46way}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_statistics/verPhyloP46way}
+  \caption{Sampling distribution of metric verPhyloP46way}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\textwidth]{metrics_plot/verPhyloP46way}
+  \caption{Values of metric verPhyloP46way}
+\end{figure}
+
+\part{Theory}
+\chapter{Input modelling}
+
+\section{Input values}
+The values used for each metric are the 3 following:
+
+\subsection{Normalized metric}
+Clearly one of the important metrics is the metric itself, that will be normalized to allow for input in \(\sqr{0,1}\) range, zero mean and unary variance:
+
+\begin{figure}
+  \begin{subfigure}{0.49\textwidth}
+    \[
+      \text{metric}' = \frac{\text{metric} - \min\crl{\text{metric values}}}{\max\crl{\text{metric values}}- \min\crl{\text{metric values}}}
+    \]
+    \caption{Input normalization to \(\sqr{0,1}\) range}
+  \end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+    \[
+      \text{metric}'' = \frac{\text{metric'} - \mean\crl{\text{metric' values}}}{\sqrt{\Var{\text{metric' values}}}}
+    \]
+    \caption{Input normalization to zero mean and unary variance}
+  \end{subfigure}
+\end{figure}
+
+\subsection{Rarity}
+Another value we will be using in the input layer of the network is the rarity of the metric value, modelled as the surprise of extracting the given value from the estimated metric distribution extrapolated out of the sampling distribution.
+
+If \(M\) is the estimated metric distribution and \(m\) is the value assumed by the metric in the given data point, we can model \textbf{rarity} as follows:
+\begin{figure}
+  \[
+    \text{rarity}(m) = 1-M(m)
+  \]
+  \caption{Rarity}
+\end{figure}
+
+\subsection{Entropy}
+The third and final value used will be \textbf{entropy}, obtained using the estimated metric probability:
+
+\begin{figure}
+  \[
+    H(x) = -\prob{x}\log\prob{x}
+  \]
+  \caption{Entropy}
+\end{figure}
+
+\section{Feet}
+The input layer is comprised of 26 (number of metrics) \textit{feet}, meaning tiny networks that are used to limit the initial linear combination of the metric input values to themselves.
+
+Each feet is modelled as a locally connected dense layer.
+
+\section{Oversampling of positives}
+Since the positive values are just the \(0.036\% \) of the dataset we'll oversample these to weight more these values. Since the variance of positive data points is too high to extrapolate a distribution to generate significant new fuzzy data points, simple duplication will be used.
+
+\section{Undersampling of negatives}
+Since the negative values are more than the \(99.96\% \) of the dataset we'll undersample these to weight less these values.
+
+\section{Absence of information}
+Absence of information about a given metric will be modelled as \textbf{zeros}, meaning all values relative to the given absent metric for that data point will be treated as zero.
+
+\chapter{Output modelling}
+The output layer of the neural network is modelled by two neurons, one representing the positive class and one the negative class.
+
+\chapter{Weight initialization}
+
+\section{Gaussian noise initialization}
+
+\chapter{Locally connected dense layers}
+
+\section{Leaky RELU}
+
+\chapter{Dense layers}
+
+\section{SELU}
+
+\section{Drop out}
+
+\part{Code}
+
+\input{\main/../../general/footer.tex}
+
+\end{document}

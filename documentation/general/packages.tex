@@ -1,0 +1,299 @@
+
+\documentclass{report} % We use report to allow for chapers etc...
+\usepackage{etoolbox}
+\usepackage{geometry} % More rich support for page layout.
+\geometry{
+	a4paper,
+	total={190mm,260mm},
+	left=10mm,
+	top=20mm,
+}
+
+\ifdef{\main}{}{
+	\providecommand{\main}{/Users/lucacappelletti/github/various-notes/Polimi/Meccanica}
+}
+\input{\main/../../general/silence.tex}
+
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{array}   % for \newcolumntype macro
+\newcolumntype{L}{>{$}l<{$}} % automaticall apply mathmode to column
+
+\theoremstyle{definition} % Sets the theorem style without italic
+\usepackage{bm} % To have bold vectors
+
+\usepackage{fp}
+\usepackage{xparse}
+
+\usepackage{iftex} % Used for if
+\ifLuaTeX
+	\directlua{pdf.setcompresslevel(9)}
+	\directlua{pdf.setobjcompresslevel(2)}
+	\directlua{pdf.setminorversion(5)}
+	\usepackage{shellesc}
+	\usepackage{polyglossia}
+	\setotherlanguage{english}
+	\setdefaultlanguage{italian}
+	\usepackage{fontspec}
+	\usepackage{luacode} % Used to script stuff
+\else
+	\usepackage[utf8]{inputenc} % This allows for utf support.
+	\usepackage[english, italian]{babel}   % Set up supported languages. Last one is default.
+\fi
+
+\usepackage[T1]{fontenc}  % Defines true type fonts
+
+\usepackage[x11names,table]{xcolor} % To highlight text or color tables
+
+\usepackage{emptypage} % When a page is empty, Latex won't generate page number or other page elements.
+
+\usepackage{multicol} % For the possibility of using columns with  \begin{multicols}{n}.
+\usepackage[colorlinks=true,urlcolor=blue,pdfpagelabels,hyperindex=false]{hyperref}  % Enable table of contents and links.
+\usepackage{microtype} % for automatic micro fitting of characters
+\usepackage{centernot} % Adds not symbol on any math symbol.
+
+\usepackage{framed}
+\usepackage{float} % to enable floating graphics
+\usepackage[style=authoryear,sorting=ynt, backend=bibtex]{biblatex} % Package to handle the bibliography
+\nocite{*} % This allows for having entried in the bib file that do not have to be necesseraly used
+\usepackage{subfiles} % To use subfiles without cruxifying saints
+
+\usepackage{parskip} % To leave spaces in paragraphs without using \\
+\usepackage{soul} % To cancel text with a line using the commant \st, to underline text and highlight.
+
+\usepackage{xfrac} % To allow for sideways fractions
+\usepackage[cache=true]{minted} % For highlighting code
+\usepackage[algoruled,linesnumbered,titlenumbered]{algorithm2e} % To highlight pseudocode
+\definecolor{mintedbackground}{rgb}{0.95,0.95,0.95}
+\setminted{
+	bgcolor=mintedbackground,
+	fontfamily=tt,
+	linenos=true,
+	numberblanklines=true,
+	numbersep=5pt,
+	gobble=0,
+	frame=leftline,
+	framerule=0.4pt,
+	framesep=2mm,
+	funcnamehighlighting=true,
+	tabsize=4,
+	obeytabs=false,
+	mathescape=false
+	samepage=false, %with this setting you can force the list to appear on the same page
+	showspaces=false,
+	showtabs =false,
+	texcl=false,
+}
+
+% CDQUOTES HAS TO BE LOADED AFTER THE MINTED
+\usepackage{csquotes} % Package required by babel AND polyglossia.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% GRAPHICAL EXTRAVAGANZA %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{pgfplots} % to draw 3d graphs
+\pgfplotsset{compat=1.14}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usepackage{relsize}
+\usepackage{circuitikz}
+\usepackage{bodegraph}
+\usepackage{adigraph}
+
+\ctikzset{tripoles/mos style/arrows}
+\ctikzset{tripoles/pmos style/emptycircle}
+\usetikzlibrary{shapes,arrows,calc,positioning,matrix}
+\usepgfplotslibrary{external}
+
+\pgfplotsset{samples=60,shader=interp,grid=both}
+
+\usepackage{paralist} % For compacted enumerations
+\usepackage[automake,style=long,nonumberlist,toc,acronym,nomain]{glossaries} % for glossaries and acronyms
+\makeglossaries % Enables the package above
+
+\usepackage{imakeidx} % instead of makeidx, so you don't need to run MakeIndex
+\makeindex[program=makeindex,columns=2,intoc=true,options={-s ../../general/pyro.ist}] % Enables the package above
+\indexsetup{firstpagestyle=empty, othercode=\small} % No page number in the first page of analytical index
+
+\usepackage{fourier} % For icons such as \bomb, \noway, \danger and various others. For more info, go here: http://ctan.mirror.garr.it/mirrors/CTAN/fonts/fourier-GUT/doc/latex/fourier/fourier-orns.pdf
+\usepackage{marvosym} % For icons such as \Cross
+
+\renewcommand*{\arraystretch}{1.25} % Stretching arrays
+
+\usepackage{sectsty} % Styles sectional headers
+\usepackage{fancyhdr} % This allows for the headings in the chapters
+\pagestyle{fancy} % This activates it
+\usepackage[avantgarde]{quotchap} % Custom style for chapters
+
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{%
+	%\chapterheadstartvskip%
+	{\size@chapter{\sectfont\raggedleft
+				{\chapnumfont
+					\ifnum \c@secnumdepth >\m@ne%
+						\if@mainmatter\thechapter\else\phantom{\thechapter}%
+						\fi\else\phantom{\thechapter}\fi
+					\par\nobreak}%
+				{\raggedleft\advance\leftmargin10em\interlinepenalty\@M #1\par}}
+			\nobreak\chapterheadendvskip}}
+\makeatother
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[shortlabels]{enumitem} % For a todo check list
+\newlist{todolist}{itemize}{2} % For a  todo check list
+% \setlist{nolistsep}
+\setlist[todolist]{label=$\square$}  % For a todo check list
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% LUATEX CODE %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifLuaTeX
+	\input{\main/../../general/lua/deapnessGuesser.tex}
+	\directlua{dofile(deapness.."/general/lua/metadataLoader.lua")}
+	\directlua{dofile(deapness.."/general/lua/languageSwitch.lua")}
+	\directlua{dofile(deapness.."/general/lua/highlight.lua")}
+
+	% THE FOLLOWING IS AN EXAMPLE ON HOW TO DEFINE A LUA COMMAND
+	% \def\command{\directlua{dofile(deapness.."/general/lua/fileName.lua")}}
+	% \command
+\else
+	% Lua not enabled
+	\input{\main/../../general/italian.tex}
+\fi
+
+\let\oldtextbf\textbf % This is a backup for options may edit \textbf
+\let\oldtextit\textit % This is a backup for options may edit \textit
+\let\oldemph\emph % This is a backup for options may edit \emph
+
+%
+% THE FOLLOWING CODE ALLOWS FOR ROMAN NUMBERS
+%
+
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+%
+% THE FOLLOWING CODE WRAPS THEOREMS IN A GRAY BOX
+%
+\colorlet{shadecolor}{gray!10}
+\let\oldTheorem\theorem
+\renewenvironment{theorem}{\begin{shaded}\begin{oldTheorem}}{\end{oldTheorem}\end{shaded}\ignorespacesafterend
+}
+
+\let\oldDefinition\definition
+\renewenvironment{definition}{\begin{shaded}\begin{oldDefinition}}{\end{oldDefinition}\end{shaded}\ignorespacesafterend
+}
+
+\let\oldCorollary\corollary
+\renewenvironment{corollary}{\begin{shaded}\begin{oldCorollary}}{\end{oldCorollary}\end{shaded}\ignorespacesafterend
+}
+
+\let\oldProposition\proposition
+\renewenvironment{proposition}{\begin{shaded}\begin{oldProposition}}{\end{oldProposition}\end{shaded}\ignorespacesafterend
+}
+
+%
+% THE FOLLOWING CODE ADDS BOLD TO THE THEOREM NAME
+%
+
+\makeatletter
+\def\th@plain{%
+	\thm@notefont{}% same as heading font
+	\itshape % body font
+}
+\def\th@definition{%
+	\thm@notefont{}% same as heading font
+	\normalfont % body font
+}
+\makeatother
+
+\definecolor {processblue}{cmyk}{0.96,0,0,0}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+\newcommand{\error}[1]{
+	\textcolor{red!90}{#1}
+}
+
+\newcommand{\bash}[1]{
+	\immediate\write18{#1}
+}
+
+\newcommand{\dddgraph}[9]{
+	%#1-> X-axis label
+	%#2-> Y-axis label
+	%#3-> Min x value
+	%#4-> Max x value
+	%#5-> Min y value
+	%#6-> Max y value
+	%#7-> Min z value
+	%#8-> Area of definition, defined as boolean expression
+	%#9-> function
+	\begin{tikzpicture}
+		\begin{axis}[
+				xlabel=$#1$,
+				width=\textwidth,
+				ylabel=$#2$,
+				zlabel=$z$,
+				domain=#3:#4,
+				y domain=#5:#6,
+				xmin=#3,
+				xmax=#4,
+				ymin=#5,
+				ymax=#6
+			]
+			\addplot3[opacity=0.7,color=gray]{#8?#7:NaN};
+			\addplot3[surf, unbounded coords=jump]{#8?#9:NaN};
+		\end{axis}
+	\end{tikzpicture}
+}
+
+\newcommand{\xygraph}[7]{
+	%#1-> Min x value
+	%#2-> Max x value
+	%#3-> Min y value
+	%#4-> Max y value
+	%#5-> Min z value
+	%#6-> Area of definition, defined as boolean expression
+	%#7-> function
+	\dddgraph{x_1}{x_2}{#1}{#2}{#3}{#4}{#5}{#6}{#7}
+}
+
+\newcommand{\posxygraph}[5]{
+	%#1-> Max x value
+	%#2-> Max y value
+	%#3-> Min z value
+	%#4-> Area of definition, defined as boolean expression
+	%#5-> function
+	\xygraph{0}{#1}{0}{#2}{#3}{#4}{#5}
+}
+
+\newcommand{\posxyzgraph}[4]{
+	%#1-> Max x value
+	%#2-> Max y value
+	%#3-> Area of definition, defined as boolean expression
+	%#4-> function
+	\posxygraph{#1}{#2}{0}{#3}{#4}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% EXTERNAL FILES %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{\main/../../general/black_magic.tex}
+\input{\main/../../general/figures/packages_for_figures.tex}
+\input{\main/../../general/custom_math_commands.tex}
+\input{\main/../../general/acronyms.tex}
+\input{\main/../../general/units.tex}
+\input{\main/../../general/probability_custom_commands.tex}
+\input{\main/../../general/repeated_theorems.tex}
+\addbibresource{references.bib}
+
+\bash{mkdir tikz}
+\tikzexternalize[prefix=tikz/]

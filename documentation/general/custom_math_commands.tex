@@ -1,0 +1,82 @@
+\DeclareMathOperator{\var}{Var}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\mcd}{mcd}
+\DeclareMathOperator*{\mcp}{mcp}
+%\DeclareMathOperator* this one allows to create environment that behave like sum or min
+
+\newcommand{\crs}{\text{\Cross}}
+
+\newcommand{\bra}[1]{\left\langle#1\right\rvert}
+\newcommand{\ket}[1]{\left\lvert#1\right\rangle}
+\newcommand{\braket}[2]{\left\langle#1\delimsize\vert#2\right\rangle}
+
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\rnd}[1]{\left(#1\right)}
+\newcommand{\sqr}[1]{\left[#1\right]}
+\newcommand{\crl}[1]{\left\{#1\right\}}
+\newcommand{\arity}[1]{\#\crl{#1}}
+
+\let\oldbm\bm
+\renewcommand{\bar}{\overline}
+\renewcommand{\bm}[1]{\oldbm{\underline{#1}}}
+\newcommand{\matr}[1]{\boldsymbol{#1}}
+\newcommand{\bbm}[1]{\bar{\bm{#1}}}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+
+\def\zero{0}
+\def\one{1}
+\def\negative{-}
+\def\positive{+}
+\def\false{\zero}
+\def\true{\one}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bs}{\backslash}
+
+\renewcommand{\O}[1]{\mathcal{O}\rnd{#1}}
+
+\NewDocumentCommand{\gmr}{m}{%
+    %
+    % #1 -> Value to build gomory cut upon
+    %
+    \rnd{#1-\floor{#1}}
+}
+
+
+\NewDocumentCommand{\buildVectorAliases}{m O{#1}}{
+    %
+    % #1 -> Letter to use for aliases
+    % #2 -> Symbol to use as output
+    %
+    \expandafter\newcommand\csname bm#1\endcsname{\bm{#2}}%
+    \expandafter\newcommand\csname bm#1o\endcsname{{\bm{#2}^*}}%
+    \expandafter\newcommand\csname bbm#1\endcsname{\bbm{#2}}%
+    \expandafter\newcommand\csname bm#1t\endcsname{{\bm{#2}^T}}%
+    \expandafter\newcommand\csname bbm#1t\endcsname{{\bbm{#2}^T}}%
+}
+
+\renewcommand{\a}{\alpha}
+\newcommand{\w}{\omega}
+\newcommand{\e}{\epsilon}
+
+\buildVectorAliases{a}[\a]
+\buildVectorAliases{w}[\w]
+\buildVectorAliases{b}
+\buildVectorAliases{c}
+\buildVectorAliases{d}
+\buildVectorAliases{h}
+\buildVectorAliases{g}
+\buildVectorAliases{p}
+\buildVectorAliases{u}
+\buildVectorAliases{v}
+\buildVectorAliases{x}
+\buildVectorAliases{y}
+\buildVectorAliases{z}

@@ -1,0 +1,11 @@
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+	\begin{center}
+		\ifLuaTeX
+			\directlua{dofile(deapness.."/general/lua/title.lua")}
+		\else
+			\large{TITLEPAGE NOT RENDERED!\\RECOMPILE WITH LUATEX!}
+		\fi
+	\end{center}
+\end{titlepage}
+\hypersetup{pageanchor=true}
