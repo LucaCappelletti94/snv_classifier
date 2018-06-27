@@ -688,15 +688,47 @@ For these properties weight will be initialized by extracting them from a Gaussi
 \chapter{Locally connected dense layers}
 The first two layers will be locally connected dense layers, to exploit the positional information of the input values.
 
-\section{Leaky RELU}
+Other than the group of triples, input will be sorted by distribution kind so that the initial interpolations happen mostly with data from the same distribution family.
+
+\begin{figure}
+	\includegraphics[width=0.3\textwidth]{locally_connected}
+	\caption{Locally connected layer}
+\end{figure}
+
+\section{Activation function}
+We'll be using a \textbf{leaky relu} for the locally connected dense layers with \(\alpha=0.3\).
+
+\begin{figure}
+	\includegraphics[width=0.8\textwidth]{relu}
+	\caption{RELU and Leaky RELU}
+\end{figure}
 
 \chapter{Dense layers}
+For the following hidden layers we will be using dense connected layers, with a piramidal structure (reducing the number of the neurons from 26 to 2).
 
-\section{SELU}
+\begin{figure}
+	\includegraphics[width=0.3\textwidth]{dense_connected}
+	\caption{Dense connected layer}
+\end{figure}
+
+\section{Activation function}
+We'll be using again \textbf{leaky relu} and experimenting with \textbf{SELU} for the dense layers:
+
+\begin{figure}
+	\[
+		\text{selu}(x) = \lambda \begin{cases}
+			x                 & x > 0    \\
+			\alpha e^x-\alpha & x \leq 0
+		\end{cases}
+	\]
+	\caption{SELU}
+\end{figure}
+
+\section{Regularization}
+Regularization layers will be alternated to the dense layers to penalize weight extreme growth.
 
 \section{Drop out}
-
-\part{Code}
+In addition to regularization, also \textbf{drop out} of \(10\% \) of neurons per hidden layer will be applied.
 
 \input{\main/../../general/footer.tex}
 
