@@ -568,7 +568,7 @@ We now proceed to draw a scatter plot trying to identify eventual data correlati
 A scatter plot with higher resolution is available in the project repository.
 \begin{center}
 	\makebox[\textwidth]{
-		\includegraphics[width=\paperwidth]{scatter_plot}
+		\includegraphics[width=\paperwidth]{small_scatter_plot}
 	}
 \end{center}
 
@@ -576,48 +576,106 @@ A scatter plot with higher resolution is available in the project repository.
 Data correlations seem to exist between:
 
 \subsection{dbVARCount and DGVCount}
-There is a strong correlation between this two metrics: let's look again at the data plots to see if they follow a similar trend:
+There is a strong correlation between this two metrics:
 
 \begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/dbVARCount}
-	\caption{Sampling distribution of metric dbVARCount}
-\end{figure}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/DGVCount}
-	\caption{Sampling distribution of metric DGVCount}
-\end{figure}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/dbVARCount}
-	\caption{Values of metric dbVARCount}
-\end{figure}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/DGVCount}
-	\caption{Values of metric DGVCount}
+	\begin{subfigure}{0.3\textwidth}
+		\includegraphics[width=\textwidth]{correlations/dbVARCount_DGVCount}
+		\caption{Correlation of dbVARCount and DGVCount}
+	\end{subfigure}
+	\begin{subfigure}{0.3\textwidth}
+		\includegraphics[width=\textwidth]{correlations/DGVCount_dbVARCount}
+		\caption{Correlation of DGVCount and dbVARCount}
+	\end{subfigure}
+	\caption{The two metrics DGVCount and dbVARCount are strongly correlated}
 \end{figure}
 
 The two metrics seem \textbf{highly} correlated, if not the \textbf{same metric}. This means that one of the two could be removed from the dataset, as it does not add any useful information.
 
 \subsection{mamPhyloP46way and verPhyloP46way}
-There is a some correlation between this two metrics: let's look again at the data plots to see if they follow a similar trend:
+There is a some correlation between this two metrics:
 
 \begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/mamPhyloP46way}
-	\caption{Sampling distribution of metric mamPhyloP46way}
-\end{figure}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/verPhyloP46way}
-	\caption{Sampling distribution of metric verPhyloP46way}
-\end{figure}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/mamPhyloP46way}
-	\caption{Values of metric mamPhyloP46way}
-\end{figure}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/verPhyloP46way}
-	\caption{Values of metric verPhyloP46way}
+	\begin{subfigure}{0.3\textwidth}
+		\includegraphics[width=\textwidth]{correlations/mamPhyloP46way_verPhyloP46way}
+		\caption{Correlation of mamPhyloP46way and verPhyloP46way}
+	\end{subfigure}
+	\begin{subfigure}{0.3\textwidth}
+		\includegraphics[width=\textwidth]{correlations/verPhyloP46way_mamPhyloP46way}
+		\caption{Correlation of verPhyloP46way and mamPhyloP46way}
+	\end{subfigure}
+	\caption{The two metrics verPhyloP46way and mamPhyloP46way are softly correlated}
 \end{figure}
 
 The two metrics seem \textbf{slightly} correlated, but not enough to consider removing one of the two.
+
+\subsection{mamPhastCons46way and verPhastCons46way}
+There is a some correlation between this two metrics:
+
+\begin{figure}
+	\begin{subfigure}{0.3\textwidth}
+		\includegraphics[width=\textwidth]{correlations/mamPhastCons46way_verPhastCons46way}
+		\caption{Correlation of mamPhyloP46way and verPhyloP46way}
+	\end{subfigure}
+	\begin{subfigure}{0.3\textwidth}
+		\includegraphics[width=\textwidth]{correlations/verPhastCons46way_mamPhastCons46way}
+		\caption{Correlation of mamPhastCons46way and verPhastCons46way}
+	\end{subfigure}
+	\caption{The two metrics mamPhastCons46way and verPhastCons46way are softly correlated}
+\end{figure}
+
+The two metrics seem \textbf{slightly} correlated, but not enough to consider removing one of the two.
+
+\subsection{mamPhastCons46way and verPhastCons46way}
+There is a some correlation between this two metrics:
+
+\begin{figure}
+	\begin{subfigure}{0.3\textwidth}
+		\includegraphics[width=\textwidth]{correlations/mamPhastCons46way_verPhastCons46way}
+		\caption{Correlation of mamPhyloP46way and verPhyloP46way}
+	\end{subfigure}
+	\begin{subfigure}{0.3\textwidth}
+		\includegraphics[width=\textwidth]{correlations/verPhastCons46way_mamPhastCons46way}
+		\caption{Correlation of mamPhastCons46way and verPhastCons46way}
+	\end{subfigure}
+	\caption{The two metrics mamPhastCons46way and verPhastCons46way are softly correlated}
+\end{figure}
+
+The two metrics seem \textbf{slightly} correlated.
+
+\subsection{verPhastCons46way and priPhastCons46way}
+There is a some correlation between this two metrics:
+
+\begin{figure}
+	\begin{subfigure}{0.3\textwidth}
+		\includegraphics[width=\textwidth]{correlations/priPhastCons46way_verPhastCons46way}
+		\caption{Correlation of priPhastCons46way and verPhastCons46way}
+	\end{subfigure}
+	\begin{subfigure}{0.3\textwidth}
+		\includegraphics[width=\textwidth]{correlations/verPhastCons46way_priPhastCons46way}
+		\caption{Correlation of verPhastCons46way and priPhastCons46way}
+	\end{subfigure}
+	\caption{The two metrics verPhastCons46way and priPhastCons46way are softly correlated}
+\end{figure}
+
+The two metrics seem \textbf{slightly} correlated.
+
+\subsection{priPhastCons46way and mamPhastCons46way}
+There is a some correlation between this two metrics:
+
+\begin{figure}
+	\begin{subfigure}{0.3\textwidth}
+		\includegraphics[width=\textwidth]{correlations/mamPhastCons46way_priPhastCons46way}
+		\caption{Correlation of mamPhastCons46way and priPhastCons46way}
+	\end{subfigure}
+	\begin{subfigure}{0.3\textwidth}
+		\includegraphics[width=\textwidth]{correlations/priPhastCons46way_mamPhastCons46way}
+		\caption{Correlation of priPhastCons46way and mamPhastCons46way}
+	\end{subfigure}
+	\caption{The two metrics priPhastCons46way and mamPhastCons46way are softly correlated}
+\end{figure}
+
+The two metrics seem \textbf{slightly} correlated.
 
 \part{Theory}
 \chapter{Input modelling}
@@ -626,34 +684,34 @@ The two metrics seem \textbf{slightly} correlated, but not enough to consider re
 The values used for each metric are the 3 following:
 
 \subsection{Normalized metric}
-Clearly one of the important metrics is the metric itself, that will be normalized to allow for input in \(\sqr{0,1}\) range:
+Clearly one of the important metrics is the metric itself, that will be normalized to allow for input in \(\sqr{-1,1}\) range:
 
 \begin{figure}
 	\[
-		\text{metric}' = \frac{\text{metric} - \min\crl{\text{metric values}}}{\max\crl{\text{metric values}}- \min\crl{\text{metric values}}}
+		m' = 2\cdot\frac{\text{metric} - \min\crl{\text{metric values}}}{\max\crl{\text{metric values}}- \min\crl{\text{metric values}}} -1
 	\]
-	\caption{Input normalization to \(\sqr{0,1}\) range}
+	\caption{Input normalization to \(\sqr{-1,1}\) range}
 \end{figure}
 
-\subsection{Rarity}
-Another value we will be using in the input layer of the network is the rarity of the metric value, modelled as the surprise value of the estimated sampling distribution of the metric:
+\subsection{Probability}
+Another value we will be using in the input layer of the network is the probability of the metric value, modelled from the estimated sampling distribution of the normalized metric:
 
-If \(M\) is the estimated metric distribution cumulative distribution function (CDF), \(m\) is the value assumed by the metric in the given data point and \(\epsilon \) is a range, we can model \textbf{rarity} as follows:
+If \(M\) is the estimated metric distribution cumulative distribution function (CDF), \(m\) is the value assumed by the metric in the given data point and \(\epsilon \) is a range, we can model the \textbf{probability} in the given value as follows:
 \begin{figure}
 	\[
-		\prob{m - \epsilon \leq X \leq m + \epsilon} = M(m + \epsilon) - M(m - \epsilon) \qquad \text{rarity}(m) = 1- \prob{m - \epsilon \leq X \leq m + \epsilon}
+		\prob{m' - \epsilon \leq X \leq m' + \epsilon} = M(m' + \epsilon) - M(m' - \epsilon)
 	\]
-	\caption{Rarity}
+	\caption{Probability}
 \end{figure}
 
-\subsection{Entropy}
-The third and final value used will be \textbf{entropy}, obtained using the estimated metric probability:
+\subsection{Deviation from mean}
+The third and last input value is the deviation from the normalized value and the mean:
 
 \begin{figure}
 	\[
-		H(x) = -\prob{m - \epsilon \leq X \leq m + \epsilon}\log\prob{m - \epsilon \leq X \leq m + \epsilon}
+		\text{deviation}(m) = m' - \mean{X}
 	\]
-	\caption{Entropy}
+	\caption{Deviation from mean}
 \end{figure}
 
 \section{Feet}
