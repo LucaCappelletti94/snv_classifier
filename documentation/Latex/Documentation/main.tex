@@ -119,7 +119,7 @@ The testing dataset does not seem to reflect the training dataset distribution, 
 Based on the informations extracted from the dataset structure, a small network should work best.
 
 \section{Activation function}
-We'll be using the \textbf{SeLU} activation function for most of the layers for its property of auto-normalization.
+We'll be using the \textbf{SeLU} (\ref{selu}) activation function for most of the layers for its property of auto-normalization.
 
 \begin{figure}
 	\[
@@ -171,7 +171,7 @@ Since the positive class is extremely smaller of the negative class a large batc
 Since the task assigned to the network is a binary classification the loss function will be the \textbf{cross entropy}.
 
 \section{Update policy}
-As update policy we are going to use a form of gradient \textbf{back propagation} with \textbf{Adam} optimizer.
+As update policy we are going to use a form of gradient \textbf{back propagation} with \textbf{Adam} optimizer (\ref{adam}).
 
 \section{Mathematical representation}
 Since the network is extremely simple a short mathematical representation is possible:
@@ -190,8 +190,73 @@ Graphical model of the network.
 	\caption{Model of the network}
 \end{figure}
 
-\part{Results}
+\chapter{Results}
 
+These are the results obtained after training the network for 100 epochs.
+
+\section{Accuracy and Loss}
+\begin{table}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Metric} & \textbf{Training}     & \textbf{Testing}      \\
+		\hline
+		Accuracy        & 0.9998970845374103    & 0.9995267641182038    \\
+		\hline
+		Loss            & 0.0004865645350134752 & 0.0018388369186131115 \\
+		\hline
+	\end{tabular}
+	\caption{Accuracy and Loss after 100 epochs}
+\end{table}
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{results/accuracy_loss}
+	\caption{Accuracy and Loss after 100 epochs}
+\end{figure}
+
+\section{ROC, AUROC, PRC and AUPRC}
+\begin{table}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Metric} & \textbf{Training}  & \textbf{Testing}   \\
+		\hline
+		AUROC           & 0.9982423662593878 & 0.9944672779007271 \\
+		\hline
+		AUPRC           & 0.8780726019818784 & 0.9337718051372246 \\
+		\hline
+	\end{tabular}
+	\caption{Accuracy and Loss after 100 epochs}
+\end{table}
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{results/ROC_PRC}
+	\caption{ROC, AUROC, PRC and AUPRC after 100 epochs}
+\end{figure}
+
+\section{Confusion matrices}
+
+\subsection{Training confusion matrix}
+\begin{figure}
+	\includegraphics[width=\textwidth]{results/training_confusion}
+	\caption{Training confusion matrix after 100 epochs}
+\end{figure}
+
+\subsection{Testing confusion matrix}
+\begin{figure}
+	\includegraphics[width=\textwidth]{results/testing_confusion}
+	\caption{Testing confusion matrix after 100 epochs}
+\end{figure}
+
+\section{Prediction speed}
+The network classifies a data point in \(375 \mu s \pm 108 \mu s\).
+
+\part{References}
+
+\chapter{References}
+
+\begin{description}
+	\item[Adam] Adam: A Method for Stochastic Optimization: \url{https://arxiv.org/abs/1412.6980} \label{adam}
+	\item[SeLU] Self-Normalizing Neural Networks: \url{https://arxiv.org/abs/1706.02515} \label{selu}
+\end{description}
 
 \input{\main/../../general/footer.tex}
 

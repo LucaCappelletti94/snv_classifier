@@ -15,23 +15,51 @@ The documentation of the project is available [here](https://github.com/LucaCapp
 ## Jupyter Notebooks
 Various jupyter notebooks with explanations are available:
 
+<p align="center">
+  <img width="150" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/scatter_plot.png?raw=true"/>
+</p>
+
 ### Scatter plot
 A jupyter notebook generating a [scatter plot](https://github.com/LucaCappelletti94/snv_classifier/blob/master/scatter_plot.png?raw=true) from the dataset is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20Scatter%20plot.ipynb).
+
+<p align="center">
+  <img width="150" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/correlation_matrix.png?raw=true"/>
+</p>
 
 ### Correlation matrices
 A jupyter notebook generating a [correlation matrix](https://github.com/LucaCappelletti94/snv_classifier/blob/master/correlation_matrix.png?raw=true) from the dataset is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20Correlation.ipynb).
 
+<p align="center">
+  <img width="150" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/pca/training.png?raw=true"/>
+</p>
+
 ### PCA
 A jupyter notebook generating [PCA 2D visualization](https://github.com/LucaCappelletti94/snv_classifier/tree/master/documentation/Latex/Documentation/images/pca) of the dataset is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20PCA.ipynb).
+
+<p align="center">
+  <img width="150" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/tsne/testing.png?raw=true"/>
+</p>
 
 ### TSNE
 A jupyter notebook generating [TSNE 2D visualization](https://github.com/LucaCappelletti94/snv_classifier/tree/master/documentation/Latex/Documentation/images/tsne) of the dataset is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20TSNE.ipynb).
 
+<p align="center">
+  <img width="150" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/plot/CpGobsExp.png?raw=true"/>
+</p>
+
 ### Dataset plots
 A jupyter notebook generating [dataset plots](https://github.com/LucaCappelletti94/snv_classifier/tree/master/documentation/Latex/Documentation/images/plot) is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20Metrics%20plots.ipynb).
 
+<p align="center">
+  <img width="150" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/distributions/CpGperCpG.png?raw=true"/>
+</p>
+
 ### Dataset distributions
 A jupyter notebook generating [dataset distributions](https://github.com/LucaCappelletti94/snv_classifier/tree/master/documentation/Latex/Documentation/images/distributions) is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20Metric%20distributions.ipynb).
+
+<p align="center">
+  <img width="150" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/network.png?raw=true"/>
+</p>
 
 ### Keras neural network
 A jupyter notebook implementing the [project neural network](https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/network.png) in keras is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20Keras.ipynb).
