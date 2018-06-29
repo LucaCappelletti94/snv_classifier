@@ -17,14 +17,16 @@ The dataset can be downloaded from \url{https://homes.di.unimi.it/valentini/Prog
 
 \section{Composition}
 \subsection{Training dataset}
-In the training dataset there are 981389 data points, each one comprised of 26 metrics. The first 356 are pathogenic and all the others are negative.
+In the training dataset there are 981388 data points, each one comprised of 26 metrics. The first 356 are pathogenic and all the others are negative.
 
 \subsection{Testing dataset}
-In the test dataset there are 190189 data points, still each one comprised of 26 metrics. The first 40 are pathogenic and the following are negative.
+In the test dataset there are 19018 data points, still each one comprised of 26 metrics. The first 40 are pathogenic and the following are negative.
 
 \chapter{Metrics}
 \section{How the graphs are realized}
 All the graphs are in triples: positives, negatives and mixed. All the zeros are removed as in most metrics \textit{seemed} to indicate an unknown value.
+
+The normalization
 
 \subsection{Metric sample distribution}
 Are realized by calculating the frequencies and estimating the density distributions parameters via MLE.
@@ -35,548 +37,21 @@ Are realized by sorting the values of the metric.
 \subsection{Normalized plot graphs}
 Are realized by sorting the values of the metric, with the domain and codomain normalized.
 
+\subfile{\main/chapters/datapoints_plots}
+\subfile{\main/chapters/metric_distributions}
+
+\chapter{Data correlation}
+We now proceed to try and identify eventual data correlations.
+
+\subfile{\main/chapters/scatter_plot}
 \clearpage
-\section{CpGobsExp}
-\subsection{Metric sample distribution}
-The data points seem to follow a \textbf{Beta} distribution with the following parameters:
-
-\begin{align*}
-	\alpha   = 7.6689746880295795     & \qquad  \beta = 6778383.524935903       \\
-	\text{loc} = -0.09826818916997124 & \qquad \text{scale} = 306278.3184506849
-\end{align*}
-
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/CpGobsExp}
-	\caption{Sampling distribution of metric CpGobsExp}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/CpGobsExp}
-	\caption{Values of metric CpGobsExp}
-\end{figure}
-
-\clearpage
-\section{CpGperCpG}
-\subsection{Metric sample distribution}
-The data points seem to follow a \textbf{Beta} distribution with the following parameters:
-
-\begin{align*}
-	\alpha   = 6.402175341881067      & \qquad  \beta = 97129163.31117742      \\
-	\text{loc} = -0.05698922703576313 & \qquad \text{scale} = 4337764.42876015
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/CpGperCpG}
-	\caption{Sampling distribution of metric CpGperCpG}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/CpGperCpG}
-	\caption{Values of metric CpGperCpG}
-\end{figure}
-
-\clearpage
-\section{CpGperGC}
-\subsection{Metric sample distribution}
-The data points seem to follow a \textbf{Gaussian} distribution with the following parameters:
-
-\begin{align*}
-	\mean{X} = 0.4602356242601636 & \qquad \Var{X} = 0.15949294643574352
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/CpGperGC}
-	\caption{Sampling distribution of metric CpGperGC}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/CpGperGC}
-	\caption{Values of metric CpGperGC}
-\end{figure}
-
-\clearpage
-\section{DGVCount}
-\subsection{Metric sample distribution}
-The data points seem to follow a \textbf{Gamma} distribution with the following parameters:
-\begin{align*}
-	\alpha   = 0.20940038672579409    \qquad  \text{loc} = -1.1962983066939984e-30 \qquad \text{scale} = 1.2347090894162929
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/DGVCount}
-	\caption{Sampling distribution of metric DGVCount}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/DGVCount}
-	\caption{Values of metric DGVCount}
-\end{figure}
-
-\clearpage
-\section{DnaseClusteredHyp}
-\subsection{Metric sample distribution}
-The data points seem to follow a \textbf{Gamma} distribution with the following parameters:
-\begin{align*}
-	\alpha   = 0.4176887081406805    \qquad  \text{loc} = -3.362626207862299e-29 \qquad \text{scale} = 0.3676310948709975
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/DnaseClusteredHyp}
-	\caption{Sampling distribution of metric DnaseClusteredHyp}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/DnaseClusteredHyp}
-	\caption{Values of metric DnaseClusteredHyp}
-\end{figure}
-
-\clearpage
-\section{DnaseClusteredScore}
-\subsection{Metric sample distribution}
-The data points seem to follow \textbf{slightly} a \textbf{Beta} distribution with the following parameters:
-\begin{align*}
-	\alpha   = 0.2709657632937803     & \qquad  \beta = 0.44530002562349713      \\
-	\text{loc} = -0.09309893086089688 & \qquad \text{scale} = 1.0930989308608972
-\end{align*}
-
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/DnaseClusteredScore}
-	\caption{Sampling distribution of metric DnaseClusteredScore}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/DnaseClusteredScore}
-	\caption{Values of metric DnaseClusteredScore}
-\end{figure}
-
-\clearpage
-\section{EncH3K27Ac}
-\subsection{Metric sample distribution}
-The data points seem to follow a family of \textbf{Gamma} distributions (a speculation for this distribution could be the different groups from which the data are extracted), we will approximate them to one with a linear combination of the parameters:
-\begin{align*}
-	\alpha   = 0.0004042086221537893    \qquad  \text{loc} = -2.859398162696207e-24 \qquad \text{scale} = 0.03076944787133299
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/EncH3K27Ac}
-	\caption{Sampling distribution of metric EncH3K27Ac}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/EncH3K27Ac}
-	\caption{Values of metric EncH3K27Ac}
-\end{figure}
-
-\clearpage
-\section{EncH3K4Me1}
-\subsection{Metric sample distribution}
-The data points seem to follow a family of \textbf{Gamma} distributions (a speculation for this distribution could be the different groups from which the data are extracted), we will approximate them to one with a linear combination of the parameters:
-\begin{align*}
-	\alpha   = 0.22566387737236238    \qquad  \text{loc} = -6.619765504581537e-27 \qquad \text{scale} = 1.396157055181753
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/EncH3K4Me1}
-	\caption{Sampling distribution of metric EncH3K4Me1}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/EncH3K4Me1}
-	\caption{Values of metric EncH3K4Me1}
-\end{figure}
-
-\clearpage
-\section{EncH3K4Me3}
-\subsection{Metric sample distribution}
-The data points seem to follow a family of \textbf{Gamma} distributions (a speculation for this distribution could be the different groups from which the data are extracted), we will approximate them to one with a linear combination of the parameters:
-\begin{align*}
-	\alpha   = 0.007502428717446465    \qquad  \text{loc} = -3.469650119186857e-25 \qquad \text{scale} = 0.04125297431971783
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/EncH3K4Me3}
-	\caption{Sampling distribution of metric EncH3K4Me3}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/EncH3K4Me3}
-	\caption{Values of metric EncH3K4Me3}
-\end{figure}
-
-\clearpage
-\section{GCContent}
-\subsection{Metric sample distribution}
-The data points seem to be a combination of two \textbf{Gaussian} distributions. This will be approximated to one with the following parameters:
-
-\begin{align*}
-	\mean{X} = 0.4482813176478024 & \qquad \Var{X} = 0.1097424869360011
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/GCContent}
-	\caption{Sampling distribution of metric GCContent}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/GCContent}
-	\caption{Values of metric GCContent}
-\end{figure}
-
-\clearpage
-\section{GerpRS}
-\subsection{Metric sample distribution}
-The data points seem to follow a family of \textbf{Gamma} distributions (a speculation for this distribution could be the different groups from which the data are extracted), we will approximate them to one with a linear combination of the parameters:
-\begin{align*}
-	\alpha   = 0.8688332877203315    \qquad  \text{loc} = -1.7081810436826354e-28 \qquad \text{scale} = 0.11512094125204281
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/GerpRS}
-	\caption{Sampling distribution of metric GerpRS}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/GerpRS}
-	\caption{Values of metric GerpRS}
-\end{figure}
-
-\clearpage
-\section{GerpRSpv}
-\subsection{Metric sample distribution}
-The data points seem to follow a family of \textbf{Gamma} distributions (a speculation for this distribution could be the different groups from which the data are extracted), we will approximate them to one with a linear combination of the parameters:
-\begin{align*}
-	\alpha   = 0.5165290213220888    \qquad  \text{loc} = -6.952792177974854e-30 \qquad \text{scale} = 0.2530358950266992
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/GerpRSpv}
-	\caption{Sampling distribution of metric GerpRSpv}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/GerpRSpv}
-	\caption{Values of metric GerpRSpv}
-\end{figure}
-
-\clearpage
-\section{ISCApath}
-\subsection{Metric sample distribution}
-The data points seem to follow a \textbf{Gamma} distribution with the following parameters:
-\begin{align*}
-	\alpha   = 0.08318618903703257    \qquad  \text{loc} = -1.9358902729364646e-30 \qquad \text{scale} = 1.2606790181148981
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/ISCApath}
-	\caption{Sampling distribution of metric ISCApath}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/ISCApath}
-	\caption{Values of metric ISCApath}
-\end{figure}
-
-\clearpage
-\section{commonVar}
-\subsection{Metric sample distribution}
-The data points seem to follow an \textbf{Exponential Weibull} distribution with the following parameters:
-
-\begin{align*}
-	\alpha   = 5.038707296051438       & \qquad  \beta = 1.0160276119461702         \\
-	\text{loc} = -0.012528678364149837 & \qquad \text{scale} = 0.025052745155722922
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/commonVar}
-	\caption{Sampling distribution of metric commonVar}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/commonVar}
-	\caption{Values of metric commonVar}
-\end{figure}
-
-\clearpage
-\section{dbVARCount}
-\subsection{Metric sample distribution}
-The data points seem to follow a \textbf{Gamma} distribution with the following parameters:
-\begin{align*}
-	\alpha   = 0.20940038672579409    \qquad  \text{loc} = -1.1962983066939984e-30 \qquad \text{scale} = 1.2347090894162929
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/dbVARCount}
-	\caption{Sampling distribution of metric dbVARCount}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/dbVARCount}
-	\caption{Values of metric dbVARCount}
-\end{figure}
-
-\clearpage
-\section{fantom5Perm}
-\subsection{Metric sample distribution}
-The data points seem to follow a \textbf{Gamma} distribution with the following parameters:
-\begin{align*}
-	\alpha   = 0.06895533706017208    \qquad  \text{loc} = -3.220296247423778e-30 \qquad \text{scale} = 1.2605014923175824
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/fantom5Perm}
-	\caption{Sampling distribution of metric fantom5Perm}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/fantom5Perm}
-	\caption{Values of metric fantom5Perm}
-\end{figure}
-
-\clearpage
-\section{fantom5Robust}
-\subsection{Metric sample distribution}
-The data points seem to follow a \textbf{Gamma} distribution with the following parameters:
-\begin{align*}
-	\alpha   = 0.08983952110680529    \qquad  \text{loc} = -3.220296247423778e-30 \qquad \text{scale} = 1.2605014923175824
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/fantom5Robust}
-	\caption{Sampling distribution of metric fantom5Robust}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/fantom5Robust}
-	\caption{Values of metric fantom5Robust}
-\end{figure}
-
-\clearpage
-\section{fracRareCommon}
-\subsection{Metric sample distribution}
-The data points seem to follow an \textbf{Beta} distribution with the following parameters:
-
-\begin{align*}
-	\alpha   = 2772.739504773501    & \qquad  \beta = 14.986077009876375      \\
-	\text{loc} = -69.93503912437342 & \qquad \text{scale} = 71.09741090721741
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/fracRareCommon}
-	\caption{Sampling distribution of metric fracRareCommon}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/fracRareCommon}
-	\caption{Values of metric fracRareCommon}
-\end{figure}
-
-\clearpage
-\section{mamPhastCons46way}
-\subsection{Metric sample distribution}
-The data points seem to follow a \textbf{Gamma} distribution with the following parameters:
-\begin{align*}
-	\alpha   = 0.3215099801387991    \qquad  \text{loc} = -6.260887365023215e-31 \qquad \text{scale} = 0.45230902834164866
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/mamPhastCons46way}
-	\caption{Sampling distribution of metric mamPhastCons46way}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/mamPhastCons46way}
-	\caption{Values of metric mamPhastCons46way}
-\end{figure}
-
-\clearpage
-\section{mamPhyloP46way}
-\subsection{Metric sample distribution}
-The data points seem to follow a \textbf{Gaussian} distribution with the following parameters:
-
-\begin{align*}
-	\mean{X} = 0.7032457913828309 & \qquad \Var{X} = 0.07627203289198752
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/mamPhyloP46way}
-	\caption{Sampling distribution of metric mamPhyloP46way}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/mamPhyloP46way}
-	\caption{Values of metric mamPhyloP46way}
-\end{figure}
-
-\clearpage
-\section{numTFBSConserved}
-\subsection{Metric sample distribution}
-The data points seem to follow a \textbf{exponential} distribution with the following parameters:
-
-\begin{align*}
-	\mean{X} = -4.600037873301623e-12 & \qquad \Var{X} = 0.033419421646804975
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/numTFBSConserved}
-	\caption{Sampling distribution of metric numTFBSConserved}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/numTFBSConserved}
-	\caption{Values of metric numTFBSConserved}
-\end{figure}
-
-\clearpage
-\section{priPhastCons46way}
-\subsection{Metric sample distribution}
-The data points seem to follow a \textbf{Gamma} distribution with the following parameters:
-\begin{align*}
-	\alpha   = 0.2836383862597563    \qquad  \text{loc} = -1.8643137904859329e-31 \qquad \text{scale} = 0.37399746075497264
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/priPhastCons46way}
-	\caption{Sampling distribution of metric priPhastCons46way}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/priPhastCons46way}
-	\caption{Values of metric priPhastCons46way}
-\end{figure}
-
-\clearpage
-\section{priPhyloP46way}
-\subsection{Metric sample distribution}
-The data points seem to follow an \textbf{Beta} distribution with the following parameters:
-
-\begin{align*}
-	\alpha   = 2095270.7440875275    & \qquad  \beta = 4.199025269606416        \\
-	\text{loc} = -103376.03746996864 & \qquad \text{scale} = 103377.03863437689
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/priPhyloP46way}
-	\caption{Sampling distribution of metric priPhyloP46way}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/priPhyloP46way}
-	\caption{Values of metric priPhyloP46way}
-\end{figure}
-
-\clearpage
-\section{rareVar}
-\subsection{Metric sample distribution}
-The data points seem to follow an \textbf{Beta} distribution with the following parameters:
-
-\begin{align*}
-	\alpha   = 14.148202647100376      & \qquad  \beta = 7669045.025220526        \\
-	\text{loc} = -0.008523116473417407 & \qquad \text{scale} = 28973.953544984728
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/rareVar}
-	\caption{Sampling distribution of metric rareVar}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/rareVar}
-	\caption{Values of metric rareVar}
-\end{figure}
-
-\clearpage
-\section{verPhastCons46way}
-\subsection{Metric sample distribution}
-The data points seem to follow a \textbf{Gamma} distribution with the following parameters:
-\begin{align*}
-	\alpha   = 0.4378982063415524    \qquad  \text{loc} = -2.5307968883256733e-31 \qquad \text{scale} = 0.43138079305533483
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/verPhastCons46way}
-	\caption{Sampling distribution of metric verPhastCons46way}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/verPhastCons46way}
-	\caption{Values of metric verPhastCons46way}
-\end{figure}
-
-\clearpage
-\section{verPhyloP46way}
-\subsection{Metric sample distribution}
-The data points seem to follow a \textbf{Gaussian} distribution with the following parameters:
-
-\begin{align*}
-	\mean{X} = 0.5723779382558164 & \qquad \Var{X} = 0.0662715947139185
-\end{align*}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_statistics/verPhyloP46way}
-	\caption{Sampling distribution of metric verPhyloP46way}
-\end{figure}
-\subsection{Metric values}
-\begin{figure}
-	\includegraphics[width=\textwidth]{metrics_plot/verPhyloP46way}
-	\caption{Values of metric verPhyloP46way}
-\end{figure}
-
-\chapter{Metric distribution summary}
-The metrics seem to follow these sample distributions:
-
-\begin{table}
-	\begin{tabular}{|l|l|}
-		\hline
-		\textbf{Metric}     & \textbf{Distribution} \\
-		\hline
-		CpGobsExp           & Beta                  \\
-		\hline
-		CpGperCpG           & Beta                  \\
-		\hline
-		CpGperGC            & Gaussian              \\
-		\hline
-		DGVCount            & Gamma                 \\
-		\hline
-		DnaseClusteredHyp   & Gamma                 \\
-		\hline
-		EncH3K27Ac          & Gamma                 \\
-		\hline
-		GCContent           & Gaussian              \\
-		\hline
-		EncH3K4Me3          & Gamma                 \\
-		\hline
-		ISCApath            & Gamma                 \\
-		\hline
-		DnaseClusteredScore & Beta                  \\
-		\hline
-		EncH3K4Me1          & Gamma                 \\
-		\hline
-		GerpRS              & Gamma                 \\
-		\hline
-		GerpRSpv            & Gamma                 \\
-		\hline
-		commonVar           & Exponential Weibull   \\
-		\hline
-		dbVARCount          & Gamma                 \\
-		\hline
-		fantom5Perm         & Gamma                 \\
-		\hline
-		fantom5Robust       & Gamma                 \\
-		\hline
-		mamPhastCons46way   & Gamma                 \\
-		\hline
-		priPhastCons46way   & Gamma                 \\
-		\hline
-		rareVar             & Beta                  \\
-		\hline
-		verPhastCons46way   & Gamma                 \\
-		\hline
-		numTFBSConserved    & Exponential           \\
-		\hline
-		fracRareCommon      & Beta                  \\
-		\hline
-		priPhyloP46way      & Beta                  \\
-		\hline
-		verPhyloP46way      & Gaussian              \\
-		\hline
-		mamPhyloP46way      & Gaussian              \\
-		\hline
-	\end{tabular}
-	\caption{Metrics and their distribution}
-\end{table}
-
-\chapter{Scatter plot}
-We now proceed to draw a scatter plot trying to identify eventual data correlations.
-
-\section{Scatter plot}
-A scatter plot with higher resolution is available in the project repository.
-\begin{center}
-	\makebox[\textwidth]{
-		\includegraphics[width=\paperwidth]{small_scatter_plot}
-	}
-\end{center}
+\subfile{\main/chapters/correlation_coefficient}
 
 \section{Identified data correlations}
 Data correlations seem to exist between:
 
 \subsection{dbVARCount and DGVCount}
-There is a strong correlation between this two metrics:
+There is an extreme correlation between this two metrics:
 
 \begin{figure}
 	\begin{subfigure}{0.3\textwidth}
@@ -590,10 +65,12 @@ There is a strong correlation between this two metrics:
 	\caption{The two metrics DGVCount and dbVARCount are strongly correlated}
 \end{figure}
 
-The two metrics seem \textbf{highly} correlated, if not the \textbf{same metric}. This means that one of the two could be removed from the dataset, as it does not add any useful information.
+The two metrics seem \textbf{highly} correlated, if not the \textbf{same metric}. This means that one of the two could be removed from the dataset, as it does not add any useful information. We verify the metrics variance:
+
+The variance of the subtraction of the two metrics is \(\Var{\text{dbVARCount} - \text{DGVCount}} = 0.0\), so the two metrics are actually the same metric.
 
 \subsection{mamPhyloP46way and verPhyloP46way}
-There is a some correlation between this two metrics:
+There is a strong correlation between this two metrics:
 
 \begin{figure}
 	\begin{subfigure}{0.3\textwidth}
@@ -604,10 +81,12 @@ There is a some correlation between this two metrics:
 		\includegraphics[width=\textwidth]{correlations/verPhyloP46way_mamPhyloP46way}
 		\caption{Correlation of verPhyloP46way and mamPhyloP46way}
 	\end{subfigure}
-	\caption{The two metrics verPhyloP46way and mamPhyloP46way are softly correlated}
+	\caption{The two metrics verPhyloP46way and mamPhyloP46way are strongly correlated}
 \end{figure}
 
-The two metrics seem \textbf{slightly} correlated, but not enough to consider removing one of the two.
+The two metrics are \textbf{strongly} correlated, we proceed to calculate the variance of the subtraction of the two metrics: \(\Var{\text{dbVARCount} - \text{DGVCount}} = 0.02\).
+
+It is extremely small: one of the two metrics can be removed from the database.
 
 \subsection{mamPhastCons46way and verPhastCons46way}
 There is a some correlation between this two metrics:
@@ -615,7 +94,7 @@ There is a some correlation between this two metrics:
 \begin{figure}
 	\begin{subfigure}{0.3\textwidth}
 		\includegraphics[width=\textwidth]{correlations/mamPhastCons46way_verPhastCons46way}
-		\caption{Correlation of mamPhyloP46way and verPhyloP46way}
+		\caption{Correlation of mamPhyloP46way and verPhastCons46way}
 	\end{subfigure}
 	\begin{subfigure}{0.3\textwidth}
 		\includegraphics[width=\textwidth]{correlations/verPhastCons46way_mamPhastCons46way}
@@ -626,22 +105,7 @@ There is a some correlation between this two metrics:
 
 The two metrics seem \textbf{slightly} correlated, but not enough to consider removing one of the two.
 
-\subsection{mamPhastCons46way and verPhastCons46way}
-There is a some correlation between this two metrics:
-
-\begin{figure}
-	\begin{subfigure}{0.3\textwidth}
-		\includegraphics[width=\textwidth]{correlations/mamPhastCons46way_verPhastCons46way}
-		\caption{Correlation of mamPhyloP46way and verPhyloP46way}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\includegraphics[width=\textwidth]{correlations/verPhastCons46way_mamPhastCons46way}
-		\caption{Correlation of mamPhastCons46way and verPhastCons46way}
-	\end{subfigure}
-	\caption{The two metrics mamPhastCons46way and verPhastCons46way are softly correlated}
-\end{figure}
-
-The two metrics seem \textbf{slightly} correlated.
+We proceed to calculate the variance of the subtraction of the two metrics: \(\Var{\text{mamPhastCons46way} - \text{verPhastCons46way}} \approx 1\). The variance is too high to consider removing one of these metrics.
 
 \subsection{verPhastCons46way and priPhastCons46way}
 There is a some correlation between this two metrics:
@@ -660,6 +124,8 @@ There is a some correlation between this two metrics:
 
 The two metrics seem \textbf{slightly} correlated.
 
+We proceed to calculate the variance of the subtraction of the two metrics: \(\Var{\text{verPhastCons46way} - \text{priPhastCons46way}} \approx 1\). The variance is too high to consider removing one of these metrics.
+
 \subsection{priPhastCons46way and mamPhastCons46way}
 There is a some correlation between this two metrics:
 
@@ -677,62 +143,29 @@ There is a some correlation between this two metrics:
 
 The two metrics seem \textbf{slightly} correlated.
 
+We proceed to calculate the variance of the subtraction of the two metrics: \(\Var{\text{priPhastCons46way} - \text{mamPhastCons46way}} \approx 1\). The variance is too high to consider removing one of these metrics.
+
 \part{Theory}
 \chapter{Input modelling}
 
 \section{Input values}
-The values used for each metric are the 3 following:
-
-\subsection{Normalized metric}
-Clearly one of the important metrics is the metric itself, that will be normalized to allow for input in \(\sqr{-1,1}\) range:
 
 \begin{figure}
 	\[
-		m' = 2\cdot\frac{\text{metric} - \min\crl{\text{metric values}}}{\max\crl{\text{metric values}}- \min\crl{\text{metric values}}} -1
+		m' = \frac{\text{metric} - \mean{\text{metric values}}}{\max\crl{\text{metric values}}- \min\crl{\text{metric values}}}
 	\]
-	\caption{Input normalization to \(\sqr{-1,1}\) range}
+	\caption{Input normalization}
 \end{figure}
-
-\subsection{Probability}
-Another value we will be using in the input layer of the network is the probability of the metric value, modelled from the estimated sampling distribution of the normalized metric:
-
-If \(M\) is the estimated metric distribution cumulative distribution function (CDF), \(m\) is the value assumed by the metric in the given data point and \(\epsilon \) is a range, we can model the \textbf{probability} in the given value as follows:
-\begin{figure}
-	\[
-		\prob{m' - \epsilon \leq X \leq m' + \epsilon} = M(m' + \epsilon) - M(m' - \epsilon)
-	\]
-	\caption{Probability}
-\end{figure}
-
-\subsection{Deviation from mean}
-The third and last input value is the deviation from the normalized value and the mean:
-
-\begin{figure}
-	\[
-		\text{deviation}(m) = m' - \mean{X}
-	\]
-	\caption{Deviation from mean}
-\end{figure}
-
-\section{Feet}
-The input layer is comprised of 25 (number of metrics, excluded the one recognized to be in strong correlation to another) \textit{feet}, meaning tiny networks that are used to limit the initial linear combination of the metric input values to themselves.
-
-Each feet is modelled as a locally connected dense layer, with a window of 3 neurons.
-
-\section{Oversampling of positives}
-Since the positive values are just the \(0.036\% \) of the dataset we'll oversample these to weight more these values. Since the variance of positive data points is too high to extrapolate a distribution to generate significant new fuzzy data points, simple duplication will be used.
-
-\section{Undersampling of negatives}
-Since the negative values are more than the \(99.96\% \) of the dataset we'll undersample these to weight less these values.
-
-\section{Oversampling and undersampling targets}
-Oversampling and undersampling target will be to have a training dataset with \(1\% \) of positives and \(99\% \) of negatives.
-
-\section{Absence of information}
-Absence of information about a given metric will be modelled as \textbf{zeros}, meaning all values relative to the given absent metric for that data point will be treated as zero.
 
 \chapter{Output modelling}
-The output layer of the neural network is modelled by \textbf{two} neurons, one representing the positive class and one the negative class, with a \textbf{softmax} as activation function.
+The output layer of the neural network is modelled by one neuron with a \textbf{sigmoid} as activation function. When active models the positive class, and when inactive models the negative class.
+
+\begin{figure}
+	\[
+		\text{sigmoid}(x) = \frac{e^x}{e^x + 1}
+	\]
+	\caption{Sigmoid}
+\end{figure}
 
 \chapter{Weight initialization}
 \section{Weight distribution based on input distribution}
@@ -743,26 +176,23 @@ The codomain values from the activation functions, being SELU for most of the ne
 
 For these properties weight will be initialized by extracting them from a Gaussian with \(\mean{X} = 0\) and \(\Var{X} = 1\).
 
-\chapter{Locally connected dense layers}
-The first two layers will be locally connected dense layers, to exploit the positional information of the input values.
+\chapter{Batch Size}
+
+\chapter{Hidden layers}
+
+\section{Possibility: Locally connected dense layers}
+The first two layers could be locally connected dense layers, to exploit the positional information of the input values.
 
 Other than the group of triples, input will be sorted by distribution kind so that the initial interpolations happen mostly with data from the same distribution family.
+
+Sadly, it does not seem that with the current implementation of Keras this is possible for vector inputs, so Dense layers will be used.
 
 \begin{figure}
 	\includegraphics[width=0.3\textwidth]{locally_connected}
 	\caption{Locally connected layer}
 \end{figure}
 
-\section{Activation function}
-We'll be using a \textbf{leaky relu} for the locally connected dense layers with \(\alpha=0.3\).
-
-\begin{figure}
-	\includegraphics[width=0.8\textwidth]{relu}
-	\caption{RELU and Leaky RELU}
-\end{figure}
-
-\chapter{Dense layers}
-For the following hidden layers we will be using dense connected layers, with a piramidal structure (reducing the number of the neurons from 26 to 2).
+For the following hidden layers we will be using dense connected layers, with a pyramidal structure (reducing the number of the neurons from 75 to 1).
 
 \begin{figure}
 	\includegraphics[width=0.3\textwidth]{dense_connected}
@@ -770,7 +200,7 @@ For the following hidden layers we will be using dense connected layers, with a 
 \end{figure}
 
 \section{Activation function}
-We'll be using again \textbf{leaky relu} and experimenting with \textbf{SELU} for the dense layers:
+We'll be using \textbf{SELU} for the hidden layers:
 
 \begin{figure}
 	\[
@@ -787,6 +217,19 @@ Regularization layers will be alternated to the dense layers to penalize weight 
 
 \section{Drop out}
 In addition to regularization, also \textbf{drop out} of \(10\% \) of neurons per hidden layer will be applied.
+
+\chapter{Loss function}
+Since the task assigned to the network is a binary classification the loss function will be the \textbf{cross entropy}.
+
+\chapter{Update policy}
+As update policy we are going to use a form of gradient \textbf{back propagation} with \textbf{adam}.
+
+\chapter{Network model representation}
+Graphical model of the network. A version in higher resolution is available in the repository.
+\begin{figure}
+	\includegraphics[width=\textwidth]{network}
+	\caption{Model of the network}
+\end{figure}
 
 \input{\main/../../general/footer.tex}
 
