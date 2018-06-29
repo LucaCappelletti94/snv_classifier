@@ -90,6 +90,22 @@ The two datasets overlap correctly.
 	\caption{Mixed dataset visualization}
 \end{figure}
 
+\section{TSNE}
+
+\subsection{Training dataset visualization}
+Implementation exists but it is not runnable on the current machine in a decent time.
+
+\subsection{Testing dataset visualization}
+With TSNE visualization, after 1000 iterations, the training dataset's positive class appears on the border right of the cluster.
+
+\begin{figure}
+	\includegraphics[width=0.5\textwidth]{tsne/testing}
+	\caption{Testing dataset visualization}
+\end{figure}
+
+\subsection{Mixed dataset visualization}
+Implementation exists but it is not runnable on the current machine in a decent time.
+
 \chapter{Dataset issues}
 
 \section{Possible dataset errors}
@@ -149,7 +165,7 @@ The codomain values from the activation functions, being SeLU for most of the ne
 For these properties weight will be initialized by extracting them from a Gaussian with \(\mean{X} = 0\) and \(\Var{X} = 1\).
 
 \section{Batch Size}
-Since the positive class is extremely smaller of the negative class a large batch size will be necessary: 1024 data points per batch.
+Since the positive class is extremely smaller of the negative class a large batch size will be necessary: 4096 data points per batch allow for a probability that at least one of the data points is positive in the training set of the \(\approx0.77\).
 
 \section{Loss function}
 Since the task assigned to the network is a binary classification the loss function will be the \textbf{cross entropy}.
