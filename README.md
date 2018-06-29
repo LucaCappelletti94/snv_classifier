@@ -26,4 +26,4 @@ A jupyter notebook generating [dataset plots](https://github.com/LucaCappelletti
 A jupyter notebook generating [dataset distributions](https://github.com/LucaCappelletti94/snv_classifier/tree/master/documentation/Latex/Documentation/images/distributions) is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20Metric%20distributions.ipynb).
 
 ### Keras neural network
-A jupyter notebook with a keras neural network is available [here]().
+A jupyter notebook implementing the [project neural network](https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/network.png) in keras is available [here]().
