@@ -118,6 +118,27 @@ The testing dataset does not seem to reflect the training dataset distribution, 
 \chapter{Model architecture}
 Based on the informations extracted from the dataset structure, a small network should work best.
 
+\begin{table}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Layer (type)}      & \textbf{Output Shape} & \textbf{Parameters number} \\
+		\hline
+		Input dense layer (Dense)  & (None, 22)            & 506                        \\
+		\hline
+		Input SeLU (Activation)    & (None, 22)            & 0                          \\
+		\hline
+		Hidden dense layer (Dense) & (None, 22)            & 506                        \\
+		\hline
+		Hidden SeLU (Activation)   & (None, 22)            & 0                          \\
+		\hline
+		Output dense layer (Dense) & (None, 1)             & 23                         \\
+		\hline
+		Sigmoid (Activation)       & (None, 1)             & 0                          \\
+		\hline
+	\end{tabular}
+	\caption{Model summary}
+\end{table}
+
 \section{Activation function}
 We'll be using the \textbf{SeLU} (\ref{selu}) activation function for most of the layers for its property of auto-normalization.
 
@@ -156,13 +177,6 @@ The output layer of the network is a dense layer with one neuron and a \textbf{s
 	\]
 	\caption{Sigmoid}
 \end{figure}
-
-\section{Weight initialization}
-Since input values are not from any particular distribution or hold properties such as \(\mean{X} = 0\) (even though the normalized data have null mean) or \(\Var{X} = 1\) (in some metrics mean and variance are far from these values) they do not suggest to use any specific distribution.
-
-The codomain values from the activation functions, being SeLU for most of the network, tend to hold the properties of \(\mean{X} = 0\) and \(\Var{X} = 1\) (\url{http://arxiv.org/abs/1706.02515}).
-
-For these properties weight will be initialized by extracting them from a Gaussian with \(\mean{X} = 0\) and \(\Var{X} = 1\).
 
 \section{Batch Size}
 Since the positive class is extremely smaller of the negative class a large batch size will be necessary: 4096 data points per batch allow for a probability that at least one of the data points is positive in the training set of the \(\approx0.77\).
@@ -209,7 +223,7 @@ These are the results obtained after training the network for 100 epochs.
 \end{table}
 
 \begin{figure}
-	\includegraphics[width=\textwidth]{results/accuracy_loss}
+	\includegraphics[width=0.7\textwidth]{results/accuracy_loss}
 	\caption{Accuracy and Loss after 100 epochs}
 \end{figure}
 
@@ -228,7 +242,7 @@ These are the results obtained after training the network for 100 epochs.
 \end{table}
 
 \begin{figure}
-	\includegraphics[width=\textwidth]{results/ROC_PRC}
+	\includegraphics[width=0.7\textwidth]{results/ROC_PRC}
 	\caption{ROC, AUROC, PRC and AUPRC after 100 epochs}
 \end{figure}
 
@@ -236,13 +250,13 @@ These are the results obtained after training the network for 100 epochs.
 
 \subsection{Training confusion matrix}
 \begin{figure}
-	\includegraphics[width=\textwidth]{results/training_confusion}
+	\includegraphics[width=0.7\textwidth]{results/training_confusion}
 	\caption{Training confusion matrix after 100 epochs}
 \end{figure}
 
 \subsection{Testing confusion matrix}
 \begin{figure}
-	\includegraphics[width=\textwidth]{results/testing_confusion}
+	\includegraphics[width=0.7\textwidth]{results/testing_confusion}
 	\caption{Testing confusion matrix after 100 epochs}
 \end{figure}
 
