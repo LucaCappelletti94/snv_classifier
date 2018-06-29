@@ -100,92 +100,83 @@ The testing dataset does not seem to reflect the training dataset distribution, 
 
 \part{Network implementation}
 \chapter{Model architecture}
+Based on the informations extracted from the dataset structure, a small network should work best.
 
-\section{Input}
-
-\begin{figure}
-	\[
-		m' = \frac{\text{metric} - \mean{\text{metric values}}}{\max\crl{\text{metric values}}- \min\crl{\text{metric values}}}
-	\]
-	\caption{Input normalization}
-\end{figure}
-
-\section{Output}
-The output layer of the neural network is modelled by one neuron with a \textbf{sigmoid} as activation function. When active models the positive class, and when inactive models the negative class.
+\section{Activation function}
+We'll be using the \textbf{SeLU} activation function for most of the layers for its property of auto-normalization.
 
 \begin{figure}
 	\[
-		\text{sigmoid}(x) = \frac{e^x}{e^x + 1}
+		\text{SeLU}(x) = \lambda \begin{cases}
+			x                 & x > 0    \\
+			\alpha e^x-\alpha & x \leq 0
+		\end{cases}
 	\]
-	\caption{Sigmoid}
+	\caption{SeLU}
 \end{figure}
 
-\section{Weight distribution based on input distribution}
-Since input values are not from any particular distribution or hold properties such as \(\mean{X} = 0\) or \(\Var{X} = 1\) (in some metrics mean and variance are far from these values) they do not suggest to use any specific distribution.
-
-\section{Weight distribution based on activation functions and regularization layers}
-The codomain values from the activation functions, being SELU for most of the network, tend to hold the properties of \(\mean{X} = 0\) and \(\Var{X} = 1\) (\url{http://arxiv.org/abs/1706.02515}). These values are then regularized to penalize extreme weights that may appear when variance starts with a value significantly away from \(1\).
-
-For these properties weight will be initialized by extracting them from a Gaussian with \(\mean{X} = 0\) and \(\Var{X} = 1\).
-
-\section{Batch Size}
-
-\section{Hidden layers}
-
-\section{Possibility: Locally connected dense layers}
-The first two layers could be locally connected dense layers, to exploit the positional information of the input values.
-
-Other than the group of triples, input will be sorted by distribution kind so that the initial interpolations happen mostly with data from the same distribution family.
-
-Sadly, it does not seem that with the current implementation of Keras this is possible for vector inputs, so Dense layers will be used.
-
-\begin{figure}
-	\includegraphics[width=0.3\textwidth]{locally_connected}
-	\caption{Locally connected layer}
-\end{figure}
-
-For the following hidden layers we will be using dense connected layers, with a pyramidal structure (reducing the number of the neurons from 75 to 1).
-
+\section{Dense layers}
+Dense layers will be used through all the network:
 \begin{figure}
 	\includegraphics[width=0.3\textwidth]{dense_connected}
 	\caption{Dense connected layer}
 \end{figure}
 
-\section{Activation function}
-We'll be using \textbf{SELU} for the hidden layers:
+\section{Input}
+The input is a dense layer with 22 neurons, expecting as input the normalized metrics. As activation function \textbf{SeLU} will be used.
+
+\section{Hidden layer}
+A single hidden dense hidden layer with 22 neurons will be used, with \textbf{SeLU} as activation function.
+
+\section{Drop out}
+For the small dimension of the network, no drop out will probably be necessary.
+
+\section{Output}
+The output layer of the network is a dense layer with one neuron and a \textbf{sigmoid} as activation function. When \textbf{active} models the positive class, and when \textbf{inactive} models the negative class.
 
 \begin{figure}
 	\[
-		\text{selu}(x) = \lambda \begin{cases}
-			x                 & x > 0    \\
-			\alpha e^x-\alpha & x \leq 0
-		\end{cases}
+		\sigma(x) = \text{sigmoid}(x) = \frac{e^x}{e^x + 1}
 	\]
-	\caption{SELU}
+	\caption{Sigmoid}
 \end{figure}
 
-\section{Regularization}
-Regularization layers will be alternated to the dense layers to penalize weight extreme growth.
+\section{Weight initialization}
+Since input values are not from any particular distribution or hold properties such as \(\mean{X} = 0\) (even though the normalized data have null mean) or \(\Var{X} = 1\) (in some metrics mean and variance are far from these values) they do not suggest to use any specific distribution.
 
-\section{Drop out}
-In addition to regularization, also \textbf{drop out} of \(10\% \) of neurons per hidden layer will be applied.
+The codomain values from the activation functions, being SeLU for most of the network, tend to hold the properties of \(\mean{X} = 0\) and \(\Var{X} = 1\) (\url{http://arxiv.org/abs/1706.02515}).
+
+For these properties weight will be initialized by extracting them from a Gaussian with \(\mean{X} = 0\) and \(\Var{X} = 1\).
+
+\section{Batch Size}
+Since the positive class is extremely smaller of the negative class a large batch size will be necessary: 1024 data points per batch.
 
 \section{Loss function}
 Since the task assigned to the network is a binary classification the loss function will be the \textbf{cross entropy}.
 
 \section{Update policy}
-As update policy we are going to use a form of gradient \textbf{back propagation} with \textbf{adam}.
+As update policy we are going to use a form of gradient \textbf{back propagation} with \textbf{Adam} optimizer.
+
+\section{Mathematical representation}
+Since the network is extremely simple a short mathematical representation is possible:
+
+\begin{figure}
+	\[
+		\text{prediction}(\bmx) = \sigma(\matr{W}_{output}\cdot\text{SeLU}(\matr{W}_{hidden}\cdot\text{SeLU}(\matr{W}_{input}\cdot\bmx)))
+	\]
+	\caption{Mathematical model}
+\end{figure}
 
 \section{Network model representation}
-Graphical model of the network. A version in higher resolution is available in the repository.
+Graphical model of the network.
 \begin{figure}
-	\includegraphics[width=\textwidth]{network}
+	\includegraphics[width=0.7\textwidth]{network}
 	\caption{Model of the network}
 \end{figure}
 
-\input{\main/../../general/footer.tex}
+\part{Results}
 
-\chapter{References}
-LatexTools does not compile references at this time.
+
+\input{\main/../../general/footer.tex}
 
 \end{document}
