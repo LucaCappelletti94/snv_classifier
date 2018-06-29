@@ -1,9 +1,13 @@
 <p align="center">
-  <img width="100" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/logo.png"/>
+  <img width="150" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/logo.png"/>
 </p>
 
 # SNV Classifier
 Project for the bioinformatics course of professor Valentini, Unimi.
+
+<p align="center">
+  <img src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/results.png"/>
+</p>
 
 ## Documentation
 The documentation of the project is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/main.pdf) and shows an analysis and visualizations of the datasets, modelling of the network and results.
