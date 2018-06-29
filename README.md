@@ -15,22 +15,22 @@ The documentation of the project is available [here](https://github.com/LucaCapp
 ## Jupyter Notebooks
 Various jupyter notebooks with explanations are available:
 
-<img width="150" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/scatter_plot.png?raw=true"/>
+<img width="300" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/scatter_plot.png?raw=true"/>
 
 ### Scatter plot
 A jupyter notebook generating a [scatter plot](https://github.com/LucaCappelletti94/snv_classifier/blob/master/scatter_plot.png?raw=true) from the dataset is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20Scatter%20plot.ipynb).
 
-<img width="150" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/correlation_matrix.png?raw=true"/>
+<img width="300" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/correlation_matrix.png?raw=true"/>
 
 ### Correlation matrices
 A jupyter notebook generating a [correlation matrix](https://github.com/LucaCappelletti94/snv_classifier/blob/master/correlation_matrix.png?raw=true) from the dataset is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20Correlation.ipynb).
 
-<img width="150" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/pca/training.png?raw=true"/>
+<img width="300" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/pca/training.png?raw=true"/>
 
 ### PCA
 A jupyter notebook generating [PCA 2D visualization](https://github.com/LucaCappelletti94/snv_classifier/tree/master/documentation/Latex/Documentation/images/pca) of the dataset is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20PCA.ipynb).
 
-<img width="150" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/tsne/testing.png?raw=true"/>
+<img width="300" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/tsne/testing.png?raw=true"/>
 
 ### TSNE
 A jupyter notebook generating [TSNE 2D visualization](https://github.com/LucaCappelletti94/snv_classifier/tree/master/documentation/Latex/Documentation/images/tsne) of the dataset is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20TSNE.ipynb).
