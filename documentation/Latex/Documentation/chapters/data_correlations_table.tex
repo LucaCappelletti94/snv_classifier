@@ -1,0 +1,28 @@
+\providecommand{\main}{..}
+\documentclass[\main/main.tex]{subfiles}
+\begin{document}
+\section{Identified data correlations}
+Data correlations exist between:
+
+\begin{table}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{First metric} & \textbf{Second metric} & \textbf{Correlation coefficient} \\
+    \hline
+    CpGobsExp             & CpGperCpG              & 0.9856203442596099               \\
+    \hline
+    CpGobsExp             & CpGperGC               & 0.9785748818167331               \\
+    \hline
+    CpGperCpG             & CpGperGC               & 0.9897887253514923               \\
+    \hline
+    dbVARCount            & DGVCount               & 1.0                              \\
+    \hline
+    mamPhyloP46way        & verPhyloP46way         & 0.9902257463490804               \\
+    \hline
+    DnaseClusteredHyp     & DnaseClusteredScore    & 0.7863337778663062               \\
+    \hline
+    mamPhastCons46way     & verPhastCons46way      & 0.8700263713585867               \\
+    \hline
+  \end{tabular}
+\end{table}
+\end{document}

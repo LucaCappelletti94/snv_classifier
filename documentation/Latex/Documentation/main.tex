@@ -24,15 +24,22 @@ In the test dataset there are 19018 data points, still each one comprised of 26 
 
 \chapter{Metrics}
 \section{How the graphs are realized}
-All the graphs are in triples: positives, negatives and mixed. All the zeros are removed as in most metrics \textit{seemed} to indicate an unknown value.
+All the graphs are in triples: positives, negatives and mixed.
 
-The normalization
+The normalization is done, as usual, in the following way:
+
+\begin{figure}
+	\[
+		m' = \frac{\text{metric} - \mean{\text{metric values}}}{\max\crl{\text{metric values}}- \min\crl{\text{metric values}}}
+	\]
+	\caption{Input normalization}
+\end{figure}
 
 \subsection{Metric sample distribution}
 Are realized by calculating the frequencies and estimating the density distributions parameters via MLE.
 
 \subsection{Plot graphs}
-Are realized by sorting the values of the metric.
+Plot graphs are realized by sorting the values of the single metrics.
 
 \subsection{Normalized plot graphs}
 Are realized by sorting the values of the metric, with the domain and codomain normalized.
@@ -46,109 +53,55 @@ We now proceed to try and identify eventual data correlations.
 \subfile{\main/chapters/scatter_plot}
 \clearpage
 \subfile{\main/chapters/correlation_coefficient}
+\clearpage
+\subfile{\main/chapters/correlations}
+\subfile{\main/chapters/data_correlations_table}
+\clearpage
+\subfile{\main/chapters/less_correlated_correlation_matrix}
 
-\section{Identified data correlations}
-Data correlations seem to exist between:
+\chapter{Dataset visualization}
+After having removed the correlated metrics we can proceed to use techniques of dimensionality reduction for visualization to see if the dataset is valid for a clustering or machine learning approach:
 
-\subsection{dbVARCount and DGVCount}
-There is an extreme correlation between this two metrics:
+\section{PCA}
+\subsection{Training dataset visualization}
+The positive data are clustered inside the negative data: a simple clustering approach would, most probably, not be enough for separating the two classes, but easily separable for any multi-parameters ML approach like networks.
 
-\begin{figure}
-	\begin{subfigure}{0.3\textwidth}
-		\includegraphics[width=\textwidth]{correlations/dbVARCount_DGVCount}
-		\caption{Correlation of dbVARCount and DGVCount}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\includegraphics[width=\textwidth]{correlations/DGVCount_dbVARCount}
-		\caption{Correlation of DGVCount and dbVARCount}
-	\end{subfigure}
-	\caption{The two metrics DGVCount and dbVARCount are strongly correlated}
-\end{figure}
-
-The two metrics seem \textbf{highly} correlated, if not the \textbf{same metric}. This means that one of the two could be removed from the dataset, as it does not add any useful information. We verify the metrics variance:
-
-The variance of the subtraction of the two metrics is \(\Var{\text{dbVARCount} - \text{DGVCount}} = 0.0\), so the two metrics are actually the same metric.
-
-\subsection{mamPhyloP46way and verPhyloP46way}
-There is a strong correlation between this two metrics:
+The points isolated on the right are most probably errors in the realization of the dataset.
 
 \begin{figure}
-	\begin{subfigure}{0.3\textwidth}
-		\includegraphics[width=\textwidth]{correlations/mamPhyloP46way_verPhyloP46way}
-		\caption{Correlation of mamPhyloP46way and verPhyloP46way}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\includegraphics[width=\textwidth]{correlations/verPhyloP46way_mamPhyloP46way}
-		\caption{Correlation of verPhyloP46way and mamPhyloP46way}
-	\end{subfigure}
-	\caption{The two metrics verPhyloP46way and mamPhyloP46way are strongly correlated}
+	\includegraphics[width=0.5\textwidth]{pca/training}
+	\caption{Training dataset visualization}
 \end{figure}
 
-The two metrics are \textbf{strongly} correlated, we proceed to calculate the variance of the subtraction of the two metrics: \(\Var{\text{dbVARCount} - \text{DGVCount}} = 0.02\).
+\subsection{Testing dataset visualization}
+The testing dataset is probably malformed: all the positives point are visibly clustered. A simple clustering approach such as K-Means could probably separate most of them successfully.
 
-It is extremely small: one of the two metrics can be removed from the database.
-
-\subsection{mamPhastCons46way and verPhastCons46way}
-There is a some correlation between this two metrics:
+An ML approach with a network will probably reach sooner an high accuracy on the testing dataset than on the training dataset for this reason, being able to classify most of the positive points immediately.
 
 \begin{figure}
-	\begin{subfigure}{0.3\textwidth}
-		\includegraphics[width=\textwidth]{correlations/mamPhastCons46way_verPhastCons46way}
-		\caption{Correlation of mamPhyloP46way and verPhastCons46way}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\includegraphics[width=\textwidth]{correlations/verPhastCons46way_mamPhastCons46way}
-		\caption{Correlation of mamPhastCons46way and verPhastCons46way}
-	\end{subfigure}
-	\caption{The two metrics mamPhastCons46way and verPhastCons46way are softly correlated}
+	\includegraphics[width=0.5\textwidth]{pca/testing}
+	\caption{Testing dataset visualization}
 \end{figure}
 
-The two metrics seem \textbf{slightly} correlated, but not enough to consider removing one of the two.
-
-We proceed to calculate the variance of the subtraction of the two metrics: \(\Var{\text{mamPhastCons46way} - \text{verPhastCons46way}} \approx 1\). The variance is too high to consider removing one of these metrics.
-
-\subsection{verPhastCons46way and priPhastCons46way}
-There is a some correlation between this two metrics:
-
+\subsection{Mixed dataset visualization}
+The two datasets overlap correctly.
 \begin{figure}
-	\begin{subfigure}{0.3\textwidth}
-		\includegraphics[width=\textwidth]{correlations/priPhastCons46way_verPhastCons46way}
-		\caption{Correlation of priPhastCons46way and verPhastCons46way}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\includegraphics[width=\textwidth]{correlations/verPhastCons46way_priPhastCons46way}
-		\caption{Correlation of verPhastCons46way and priPhastCons46way}
-	\end{subfigure}
-	\caption{The two metrics verPhastCons46way and priPhastCons46way are softly correlated}
+	\includegraphics[width=0.5\textwidth]{pca/mixed}
+	\caption{Mixed dataset visualization}
 \end{figure}
 
-The two metrics seem \textbf{slightly} correlated.
+\chapter{Dataset issues}
 
-We proceed to calculate the variance of the subtraction of the two metrics: \(\Var{\text{verPhastCons46way} - \text{priPhastCons46way}} \approx 1\). The variance is too high to consider removing one of these metrics.
+\section{Possible dataset errors}
+The PCA visualization shows points extremely out of the dataset cluster. It is possible that these points are errors.
 
-\subsection{priPhastCons46way and mamPhastCons46way}
-There is a some correlation between this two metrics:
+\section{Biased testing dataset}
+The testing dataset does not seem to reflect the training dataset distribution, but agglomerates the two classes in two separated clusters. It is therefore unhelpful when calculating the classification success in networks, as the training dataset result harder to classify that the testing one.
 
-\begin{figure}
-	\begin{subfigure}{0.3\textwidth}
-		\includegraphics[width=\textwidth]{correlations/mamPhastCons46way_priPhastCons46way}
-		\caption{Correlation of mamPhastCons46way and priPhastCons46way}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\includegraphics[width=\textwidth]{correlations/priPhastCons46way_mamPhastCons46way}
-		\caption{Correlation of priPhastCons46way and mamPhastCons46way}
-	\end{subfigure}
-	\caption{The two metrics priPhastCons46way and mamPhastCons46way are softly correlated}
-\end{figure}
+\part{Network implementation}
+\chapter{Model architecture}
 
-The two metrics seem \textbf{slightly} correlated.
-
-We proceed to calculate the variance of the subtraction of the two metrics: \(\Var{\text{priPhastCons46way} - \text{mamPhastCons46way}} \approx 1\). The variance is too high to consider removing one of these metrics.
-
-\part{Theory}
-\chapter{Input modelling}
-
-\section{Input values}
+\section{Input}
 
 \begin{figure}
 	\[
@@ -157,7 +110,7 @@ We proceed to calculate the variance of the subtraction of the two metrics: \(\V
 	\caption{Input normalization}
 \end{figure}
 
-\chapter{Output modelling}
+\section{Output}
 The output layer of the neural network is modelled by one neuron with a \textbf{sigmoid} as activation function. When active models the positive class, and when inactive models the negative class.
 
 \begin{figure}
@@ -167,7 +120,6 @@ The output layer of the neural network is modelled by one neuron with a \textbf{
 	\caption{Sigmoid}
 \end{figure}
 
-\chapter{Weight initialization}
 \section{Weight distribution based on input distribution}
 Since input values are not from any particular distribution or hold properties such as \(\mean{X} = 0\) or \(\Var{X} = 1\) (in some metrics mean and variance are far from these values) they do not suggest to use any specific distribution.
 
@@ -176,9 +128,9 @@ The codomain values from the activation functions, being SELU for most of the ne
 
 For these properties weight will be initialized by extracting them from a Gaussian with \(\mean{X} = 0\) and \(\Var{X} = 1\).
 
-\chapter{Batch Size}
+\section{Batch Size}
 
-\chapter{Hidden layers}
+\section{Hidden layers}
 
 \section{Possibility: Locally connected dense layers}
 The first two layers could be locally connected dense layers, to exploit the positional information of the input values.
@@ -218,13 +170,13 @@ Regularization layers will be alternated to the dense layers to penalize weight 
 \section{Drop out}
 In addition to regularization, also \textbf{drop out} of \(10\% \) of neurons per hidden layer will be applied.
 
-\chapter{Loss function}
+\section{Loss function}
 Since the task assigned to the network is a binary classification the loss function will be the \textbf{cross entropy}.
 
-\chapter{Update policy}
+\section{Update policy}
 As update policy we are going to use a form of gradient \textbf{back propagation} with \textbf{adam}.
 
-\chapter{Network model representation}
+\section{Network model representation}
 Graphical model of the network. A version in higher resolution is available in the repository.
 \begin{figure}
 	\includegraphics[width=\textwidth]{network}
