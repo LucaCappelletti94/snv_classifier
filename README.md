@@ -35,17 +35,17 @@ A jupyter notebook generating [PCA 2D visualization](https://github.com/LucaCapp
 ### TSNE
 A jupyter notebook generating [TSNE 2D visualization](https://github.com/LucaCappelletti94/snv_classifier/tree/master/documentation/Latex/Documentation/images/tsne) of the dataset is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20TSNE.ipynb).
 
-<img width="150" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/plot/CpGobsExp.png?raw=true"/>
+<img width="300" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/plot/CpGobsExp.png?raw=true"/>
 
 ### Dataset plots
 A jupyter notebook generating [dataset plots](https://github.com/LucaCappelletti94/snv_classifier/tree/master/documentation/Latex/Documentation/images/plot) is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20Metrics%20plots.ipynb).
 
-<img width="150" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/distributions/CpGperCpG.png?raw=true"/>
+<img width="300" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/distributions/CpGperCpG.png?raw=true"/>
 
 ### Dataset distributions
 A jupyter notebook generating [dataset distributions](https://github.com/LucaCappelletti94/snv_classifier/tree/master/documentation/Latex/Documentation/images/distributions) is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20Metric%20distributions.ipynb).
 
-<img width="150" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/network.png?raw=true"/>
+<img width="300" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/network.png?raw=true"/>
 
 ### Keras neural network
 A jupyter notebook implementing the [project neural network](https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/network.png) in keras is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20Keras.ipynb).
