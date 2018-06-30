@@ -20,6 +20,47 @@ A jupyter notebook implementing the [project neural network](https://github.com/
 
 <img width="300" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/network.png?raw=true"/>
 
+#### Network trained model usage example
+A jupyter notebook implementing a usage example of the trained model is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20Loading%20saved%20model.ipynb) or just below here:
+
+```python
+  #!/usr/bin/python
+  # -*- coding: utf-8 -*-
+  import numpy as np
+  from keras.models import load_model
+
+  def number_to_class(value):
+      """Map class identifier to class name."""
+
+      if value:
+          return 'Positive'
+      return 'Negative'
+  
+  EXAMPLE_DATASET = 'Mendelian.normalized.example.test.tsv'
+      
+  model = load_model('model.h5')
+  model.load_weights('weights.h5')
+  data_points = np.loadtxt(EXAMPLE_DATASET, delimiter='\t')
+
+  for prediction in model.predict_classes(data_points):
+      print 'I believe %s to be %s' % (number_to_class(1),
+              number_to_class(prediction))
+  
+  """
+    I believe Positive to be Positive
+    I believe Positive to be Positive
+    I believe Positive to be Positive
+    I believe Positive to be Positive
+    I believe Positive to be Positive
+    I believe Positive to be Positive
+    I believe Positive to be Negative
+    I believe Positive to be Positive
+    I believe Positive to be Positive
+    I believe Positive to be Negative
+  """
+  
+```
+
 ### Scatter plot
 A jupyter notebook generating a [scatter plot](https://github.com/LucaCappelletti94/snv_classifier/blob/master/scatter_plot.png?raw=true) from the dataset is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/Bioinformatica%20-%20Scatter%20plot.ipynb).
 
