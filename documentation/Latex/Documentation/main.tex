@@ -114,6 +114,14 @@ The PCA visualization shows points extremely out of the dataset cluster. It is p
 \section{Biased testing dataset}
 The testing dataset does not seem to reflect the training dataset distribution, but agglomerates the two classes in two separated clusters. It is therefore unhelpful when calculating the classification success in networks, as the training dataset result harder to classify that the testing one.
 
+\subsection{Experimental proof}
+To test if the testing dataset really is unhelpful in validating the network results I have tried to train an extremely small network (2 layers, 3 neurons each). The results after 300 epochs, trained on the usual training set, show a considerable success on the testing set while still low success on the training set.
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{doubts.png}
+	\caption{Quick ``overfitting'' on test set}
+\end{figure}
+
 \part{Network implementation}
 \chapter{Model architecture}
 Based on the informations extracted from the dataset structure, a small network should work best.
