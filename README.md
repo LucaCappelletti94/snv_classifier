@@ -12,6 +12,13 @@ Project for the bioinformatics course of professor Valentini, Unimi.
 ## Documentation
 The documentation of the project is available [here](https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/main.pdf) and shows an analysis and visualizations of the datasets, modelling of the network and results.
 
+## Doubts over obtained results
+Some doubts have been raised by the extremely quick "overfitting" on the test set when using simple networks, such as a 2 layer with 3 neurons each. This is probably motivated (experimental proof in the PCA notebook) by the distribution of the test set that does not reflect the distribution of the train set, but is actually extremely more easily separable.
+
+<p align="center">
+  <img src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/doubts.png"/>
+</p>
+
 ## Jupyter Notebooks
 Various jupyter notebooks with explanations are available:
 
