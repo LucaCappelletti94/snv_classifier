@@ -19,6 +19,25 @@ Some doubts have been raised by the extremely quick "overfitting" on the test se
   <img src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/documentation/Latex/Documentation/images/doubts.png"/>
 </p>
 
+## Batch of neural networks
+To verify if 36/40 is the maximum of precision that a common neural network an reach over the given dataset I have trained 136 networks with a gradient of architectures for 100 generations each.
+
+All the trained models and weights are available [here](https://github.com/LucaCappelletti94/snv_classifier/tree/master/meta_networks).
+
+### Errors and issues with this approach
+- Deeper networks need more epochs to converge.
+- I **forgot** to reset the random seed for each network, so the networs start from different random weights. I will retrain the networks resetting the seeds as soon as I get the time.
+
+<p align="center">
+  <img alt="Meta Training Confusion" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Testing%20Confusion.png"/>
+  <img alt="Meta Testing Confusion" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Training%20Confusion.png"/>
+  <img alt="Meta Training Auroc" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Testing%20Auroc.png"/>
+  <img alt="Meta Testing Auroc" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Training%20Auroc.png"/>
+  <img alt="Meta Training AuPRC" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Testing%20Auprc.png"/>
+  <img alt="Meta Testing AuPRC" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Training%20Auprc.png"/>
+</p>
+
+
 ## Jupyter Notebooks
 Various jupyter notebooks with explanations are available:
 
