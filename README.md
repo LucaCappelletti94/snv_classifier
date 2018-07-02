@@ -37,6 +37,8 @@ All the trained models and weights are available [here](https://github.com/LucaC
   <img alt="Meta Testing AuPRC" width="120" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Training%20Auprc.png"/>
 </p>
 
+### Results
+The approach suggests that 36/40 is the maximal precision.
 
 ## Jupyter Notebooks
 Various jupyter notebooks with explanations are available:
