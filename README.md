@@ -29,12 +29,12 @@ All the trained models and weights are available [here](https://github.com/LucaC
 - I **forgot** to reset the random seed for each network, so the networs start from different random weights. I will retrain the networks resetting the seeds as soon as I get the time.
 
 <p align="center">
-  <img alt="Meta Training Confusion" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Testing%20Confusion.png"/>
-  <img alt="Meta Testing Confusion" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Training%20Confusion.png"/>
-  <img alt="Meta Training Auroc" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Testing%20Auroc.png"/>
-  <img alt="Meta Testing Auroc" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Training%20Auroc.png"/>
-  <img alt="Meta Training AuPRC" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Testing%20Auprc.png"/>
-  <img alt="Meta Testing AuPRC" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Training%20Auprc.png"/>
+  <img alt="Meta Training Confusion" width="200" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Testing%20Confusion.png"/>
+  <img alt="Meta Testing Confusion" width="200" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Training%20Confusion.png"/>
+  <img alt="Meta Training Auroc" width="200" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Testing%20Auroc.png"/>
+  <img alt="Meta Testing Auroc" width="200" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Training%20Auroc.png"/>
+  <img alt="Meta Training AuPRC" width="200" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Testing%20Auprc.png"/>
+  <img alt="Meta Testing AuPRC" width="200" src="https://github.com/LucaCappelletti94/snv_classifier/blob/master/meta%20training/Meta%20Training%20Auprc.png"/>
 </p>
 
 
